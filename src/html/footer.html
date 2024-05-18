@@ -1,20 +1,54 @@
-<footer class="footer line">
+<footer class="footer">
   <div class="footer__container">
-    <div class="footer__copyright">
-      <span>© 2024-МЦ «ДIМ ОРТОПЕДА», </span>
-      <span>Усі права захищено</span>
+    <div class="footer__top">
+      <div class="footer__left">
+        <div class="card-border footer__title">
+          <div class="card-border__wrap footer__title-wrap">
+            <h2>
+              МЦ <span>«ДIМ&nbspОРТОПЕДА»</span> — Перший та
+              єдиний в Україні
+              медичний центр з корекції деформації голови у дітей
+            </h2>
+          </div>
+        </div>
+
+        <div class="card-border">
+          <div class="card-border__wrap footer__networks">
+            <span>Ми в соцiльних мережах</span>
+            @@include('./components/socials.html', {
+            "class": "footer__socials",
+            "tg": false
+            })
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="footer__kruglov">
-      <span>Розробка сайту:</span>
-      <a
-        href="https://www.instagram.com/boris__kruglov/"
-        target="_blank"
-        rel="noreferrer noopener"
-        class="burger__kruglov-link"
-      >
-        kruglov.design
-      </a>
+    <div class="footer__bottom">
+      <div class="card-border footer__copyright">
+        <div class="card-border__wrap footer__copyright-wrap">
+          <a href="#" class="footer__politics">Політика конфіденційності</a>
+          <div class="footer__copyright-inner">
+            <span>© 2024-МЦ «ДIМ&nbspОРТОПЕДА»,</span>
+            <span>Усі права захищено</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-border footer__kruglov">
+        <div class="card-border__wrap footer__kruglov-wrap">
+          <span>Дизайн <br> та розробка:</span>
+          <a
+            href="https://www.instagram.com/boris__kruglov/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="footer__kruglov-link" aria-label="kruglov">
+            <svg width="165" height="71">
+              <use href="./images/sprite.svg#kruglov" />
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

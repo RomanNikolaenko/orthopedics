@@ -39,6 +39,7 @@
   &__body {
     display: grid;
     gap: rem(32);
+    margin-top: rem(24);
 
     @media (min-width: 768px) {
       grid-template-columns: 1fr 2.3fr;
@@ -47,13 +48,18 @@
     }
 
     .nav {
-      padding-bottom: rem(30);
+      padding-bottom: rem(24);
       margin-bottom: auto;
+
+      @media (min-width: 768px) {
+        padding-bottom: rem(34);
+      }
     }
   }
 
   &__body-title {
     font-size: rem(24);
+    line-height: 1;
     text-transform: uppercase;
     opacity: 0.35;
   }

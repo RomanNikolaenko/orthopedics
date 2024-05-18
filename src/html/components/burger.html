@@ -3,14 +3,13 @@
   <div class="menus__wrap burger__wrap">
     <div class="menus__header burger__header">
       <h2 class="title burger__title">
-        <span class="title__border">БЕЗПЕКА ТА ЗДОРОВ’Я</span> дитини — <span
+        БЕЗПЕКА ТА ЗДОРОВ’Я дитини — <span
           class="title__color">наш
           пріоритет</span>
       </h2>
       @@include('../ui/button-close.html', { "dataType": "data-close-burger",
       "class": "button-close burger__close" })
     </div>
-    <div class="line"></div>
     <div class="menus__body burger__body">
       <div class="burger__left-column column-left">
         <h3 class="burger__body-title">Компанія</h3>
@@ -18,7 +17,10 @@
 
         @@include('./nav.html')
 
-        @@include('./header-socials.html')
+        @@include('./socials.html', {
+        "class": "header__socials",
+        "tg": true
+        })
 
         <div class="line for-desktop"></div>
         <div data-da=".burger__btns, 767.98, last" class="burger__kruglov">

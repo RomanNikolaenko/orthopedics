@@ -8,7 +8,9 @@
   }
 
   &__item {
-    margin-bottom: rem(16);
+    &:not(:last-of-type) {
+      margin-bottom: rem(16);
+    }
   }
 
   &__link {

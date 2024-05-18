@@ -1,23 +1,10 @@
-/**
- * !(i)
- * Код попадает в итоговый файл, только когда вызвана функция, например FLSFunctions.spollers();
- * Или когда импортирован весь файл, например import "files/script.js";
- * Неиспользуемый код в итоговый файл не попадает.
+import { useDynamicAdapt } from './libs/adaptive.js';
+useDynamicAdapt();
 
- * Если мы хотим добавить модуль следует его раскомментировать
- */
-// import MousePRLX from './libs/parallaxMouse'
-// import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
-
-// import './helpers/bounding-client-rect';
-
-// import counter from './libs/counter';
-// import { useDynamicAdapt } from './libs/adaptive.js';
-
-// useDynamicAdapt();
-
+import './helpers/animation';
+// import './helpers/swiper';
 import BaseHelpers from './helpers/base-helpers';
+
 import PopupManager from './modules/popup-manager';
 import Menus from './modules/menus';
 // import './helpers/animation';

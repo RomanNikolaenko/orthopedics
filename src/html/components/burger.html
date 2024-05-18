@@ -1,21 +1,93 @@
-<div class="menus burger" data-close-burger data-lp>
+<div class="menus burger" data-close-burger>
   <div class="menus__backdrop burger__backdrop" data-close-burger></div>
   <div class="menus__wrap burger__wrap">
     <div class="menus__header burger__header">
+      <h2 class="title burger__title">
+        <span class="title__border">БЕЗПЕКА ТА ЗДОРОВ’Я</span> дитини — <span
+          class="title__color">наш
+          пріоритет</span>
+      </h2>
       @@include('../ui/button-close.html', { "dataType": "data-close-burger",
-      "class": "btn-close" })
+      "class": "button-close burger__close" })
     </div>
+    <div class="line"></div>
     <div class="menus__body burger__body">
-      <div class="burger__kruglov">
-        <span>Розробка сайту:</span>
-        <a
-          href="https://www.instagram.com/boris__kruglov/"
-          target="_blank"
-          rel="noreferrer noopener"
-          class="burger__kruglov-link"
-        >
-          kruglov-design
-        </a>
+      <div class="burger__left-column column-left">
+        <h3 class="burger__body-title">Компанія</h3>
+        <div class="line"></div>
+
+        @@include('./nav.html')
+
+        @@include('./header-socials.html')
+
+        <div class="line for-desktop"></div>
+        <div data-da=".burger__btns, 767.98, last" class="burger__kruglov">
+          <span>Дизайн та розробка:</span>
+          <a
+            href="https://www.instagram.com/boris__kruglov/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="button-line burger__kruglov-link">
+            Борис Круглов
+          </a>
+        </div>
+      </div>
+
+      <div class="burger__right-column column-right">
+        <h3 class="burger__body-title">Послуги</h3>
+        <div class="line"></div>
+
+        <div class="column-right__wrap">
+          @@include('./service-card.html', {
+          "img": "service-card1.svg",
+          "title": "Лiкування деформацiї голови",
+          "text":
+          "Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини",
+          "link": "дізнатися бiльшE",
+          })
+          @@include('./service-card.html', {
+          "img": "service-card2.svg",
+          "title": "Ортозування дiтей",
+          "text":
+          "Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей",
+          "link": "дізнатися бiльшE",
+          })
+          @@include('./service-card.html', {
+          "img": "service-card3.svg",
+          "title": "Консультації дитячого лiкаря ортопеда",
+          "text":
+          "Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини",
+          "link": "дізнатися бiльшE",
+          })
+          @@include('./service-card.html', {
+          "img": "service-card4.svg",
+          "title": "реабiлiтацiя, Фізіотерапія та Масаж",
+          "text":
+          "Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку",
+          "link": "дізнатися бiльшE",
+          })
+        </div>
+
+        <div class="line"></div>
+        <div class="burger__btns">
+          <div class="burger__btns-wrap">
+            <a href="#"
+              class="burger__btns-prev">
+              <svg width="37" height="9">
+                <use href="./images/sprite.svg#arrow-prev" />
+              </svg>
+              Повернутися назад
+            </a>
+
+            <a href="#"
+              class="button-line button-line__with-svg burger__btns-services">
+              Усi послуги
+              <svg width="13" height="12">
+                <use href="./images/sprite.svg#arrow-up" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

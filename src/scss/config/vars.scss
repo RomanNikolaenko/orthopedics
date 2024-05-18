@@ -20,8 +20,6 @@ $maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина кон�
 
 :root {
   --surface-white: #fff;
-  --surface-white-hover: #fef9f4;
-  --surface-white-active: #fcebdd;
   --surface-bg: #fff8f0;
   --surface-light: #fef9f4;
   --surface-light-hover: #fcebdd;
@@ -58,7 +56,6 @@ $maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина кон�
   --blue: #96b6dc;
   --gray: #798f99;
   --dark-blue: #2a0d82;
-  --dark-grey: #5d5955;
   --text-light: #7c7976;
   --text-title: #62500f;
   --text-dark: #5d5955;

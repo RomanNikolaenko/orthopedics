@@ -1,2 +1,26 @@
 .nav {
+  font-family: var(--font-second);
+
+  &__list {
+    column-count: 2;
+    column-gap: rem(20);
+    column-width: rem(170);
+  }
+
+  &__item {
+    margin-bottom: rem(16);
+  }
+
+  &__link {
+    padding: rem(6) 0;
+    transition: color var(--bs-transition);
+
+    @include interactive {
+      color: var(--primary-300);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+  }
 }

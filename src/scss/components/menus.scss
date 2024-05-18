@@ -11,7 +11,8 @@
   overflow: hidden;
   pointer-events: none;
   visibility: hidden;
-  transition: all var(--bs-transition);
+  transition: opacity var(--bs-transition), visibility var(--bs-transition),
+    pointer-events var(--bs-transition);
 
   &__backdrop {
     position: absolute;
@@ -26,24 +27,8 @@
     z-index: 1;
     max-height: 100%;
     overflow-y: overlay;
-    background-color: #f3f1ee;
+    background-color: rgba(255, 248, 240, 0.95);
     border-radius: 0 0 rem(20) rem(20);
-    transition: all var(--bs-transition);
-  }
-
-  &__header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: rem(20);
-    background-color: inherit;
-    padding-top: rem(24);
-    padding-bottom: rem(24);
-    margin-bottom: rem(24);
-    border-bottom: 1px solid var(--line40);
+    transition: all var(--bs-transition), padding 0s;
   }
 }

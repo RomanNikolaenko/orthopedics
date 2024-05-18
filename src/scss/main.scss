@@ -50,6 +50,8 @@
 @import 'components/socials';
 
 @import 'components/burger';
+@import 'components/nav';
+@import 'components/service-card';
 @import 'components/search';
 @import 'components/popup';
 @import 'blocks/footer';
@@ -60,4 +62,8 @@
   width: 1px;
   height: 1px;
   margin: -1px;
+}
+
+.page {
+  height: 300vh;
 }

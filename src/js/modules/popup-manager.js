@@ -6,7 +6,6 @@ class PopupManager extends Popup {
 
     const defaultOptions = {
       isOpenClass: 'is-open',
-      buttonCloseName: 'button-close',
     };
 
     this.options = Object.assign(defaultOptions, options);
@@ -31,12 +30,6 @@ class PopupManager extends Popup {
         popup.classList.remove(this.options.isOpenClass);
         popup.setAttribute('aria-hidden', 'true');
         this.closePopup(popup);
-
-        if (popup.querySelector(`.${this.options.buttonCloseName}`)) {
-          popup
-            .querySelector(`.${this.options.buttonCloseName}`)
-            .setAttribute('tabindex', '-1');
-        }
 
         setTimeout(() => {
           this.toggleBodyLock(false);
@@ -65,8 +58,7 @@ class PopupManager extends Popup {
     }
 
     if (
-      target.hasAttribute('data-close-overlay') ||
-      target.closest(`.${this.options.buttonCloseName}`)
+      target.hasAttribute('data-close-overlay')
     ) {
       this.closePopup(target.closest('[data-popup]'));
 
@@ -92,11 +84,6 @@ class PopupManager extends Popup {
     if (popup) {
       popup.classList.add(this.options.isOpenClass);
       popup.setAttribute('aria-hidden', 'false');
-      if (popup.querySelector(`.${this.options.buttonCloseName}`)) {
-        popup
-          .querySelector(`.${this.options.buttonCloseName}`)
-          .setAttribute('tabindex', '0');
-      }
     }
   }
 
@@ -104,11 +91,6 @@ class PopupManager extends Popup {
     if (popup) {
       popup.classList.remove(this.options.isOpenClass);
       popup.setAttribute('aria-hidden', 'true');
-      if (popup.querySelector(`.${this.options.buttonCloseName}`)) {
-        popup
-          .querySelector(`.${this.options.buttonCloseName}`)
-          .setAttribute('tabindex', '-1');
-      }
     }
 
     if (popup.getAttribute('data-popup') == 'map') {

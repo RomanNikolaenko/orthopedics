@@ -8,6 +8,7 @@
     font-size: rem(15);
     line-height: 1;
     text-transform: uppercase;
+    transition: color var(--bs-transition);
 
     @include interactive {
       color: var(--primary-400);

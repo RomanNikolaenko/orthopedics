@@ -1,0 +1,13 @@
+[data-fullscreen] {
+  min-height: 100vh;
+
+  @supports (min-height: 100dvh) {
+    min-height: 100dvh;
+  }
+
+  @supports not (min-height: 100dvh) {
+    .touch & {
+      min-height: 100vh;
+    }
+  }
+}

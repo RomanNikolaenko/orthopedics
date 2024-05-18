@@ -1,0 +1,49 @@
+.menus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(25px);
+  background-color: rgba(98, 84, 70, 0.2);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all var(--bs-transition);
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrap {
+    position: relative;
+    z-index: 1;
+    max-height: 100%;
+    overflow-y: overlay;
+    background-color: #f3f1ee;
+    border-radius: 0 0 rem(20) rem(20);
+    transition: all var(--bs-transition);
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+    background-color: inherit;
+    padding-top: rem(24);
+    padding-bottom: rem(24);
+    margin-bottom: rem(24);
+    border-bottom: 1px solid var(--line40);
+  }
+}

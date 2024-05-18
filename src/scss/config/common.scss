@@ -1,0 +1,182 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: rem(8);
+  box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
+  border-radius: 100vmax;
+  padding: rem(12) rem(20);
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: prc(14.4, 18);
+  text-transform: uppercase;
+  transition: all var(--bs-transition);
+
+  &.button-36 {
+    min-height: rem(36);
+  }
+
+  &.button-44 {
+    min-height: rem(44);
+  }
+
+  &.button-56 {
+    min-height: rem(56);
+  }
+
+  &.button-60 {
+    min-height: rem(60);
+  }
+
+  &.button-orange {
+    color: #fff;
+    background-color: var(--primary-400);
+    border: 1.5px solid #fff;
+
+    @include interactive {
+      background-color: var(--primary-400);
+      border-color: var(--primary-400);
+    }
+
+    @include any-hover {
+      background-color: var(--primary-600);
+      border-color: var(--primary-600);
+    }
+  }
+
+  &.button-light {
+    color: var(--primary-400);
+    background-color: var(--bg);
+    border: 1.5px solid var(--primary-400);
+
+    @include interactive {
+      background-color: var(--primary-400);
+      color: #fff;
+    }
+
+    @include any-hover {
+      background-color: var(--primary-500);
+      border-color: var(--primary-500);
+      color: #fff;
+    }
+  }
+
+  &.button-white {
+    color: var(--primary-400);
+    background-color: #fff;
+    border: 1.5px solid var(--primary-400);
+
+    @include interactive {
+      background-color: var(--primary-400);
+      color: #fff;
+    }
+
+    @include any-hover {
+      background-color: var(--primary-500);
+      border-color: var(--primary-500);
+      color: #fff;
+    }
+  }
+}
+
+.button-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  @include property('width', 56, 42);
+  @include property('height', 56, 42);
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
+  background-color: var(--primary-500);
+  color: #fff;
+  transition: all var(--bs-transition);
+
+  @include interactive {
+    background-color: var(--primary-400);
+  }
+
+  @include any-hover {
+    background-color: var(--primary-600);
+  }
+}
+
+.border-bg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &__input {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 3;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-color: #f3f1ee;
+    border-radius: rem(18);
+    padding: rem(10) rem(44);
+    font-size: rem(18);
+    font-family: var(--font-second);
+    line-height: 1.3;
+
+    color: var(--primary-400);
+
+    @include interactive {
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+
+    &::placeholder {
+      color: inherit;
+      user-select: none;
+      opacity: 0.5;
+      color: var(--text-dark);
+      transition: opacity var(--bs-transition);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: var(--neutral-40);
+      }
+
+      + label {
+        color: var(--neutral-20);
+      }
+
+      ~ button {
+        pointer-events: none;
+        color: var(--neutral-20);
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: text;
+    min-height: rem(75);
+    color: rgba(234, 133, 41, 0.25);
+
+    border-radius: rem(20);
+    backdrop-filter: blur(18px);
+    background-image: linear-gradient(
+      0deg,
+      currentColor 0%,
+      currentColor 20px,
+      transparent 20px,
+      transparent calc(100% - 20px),
+      currentColor calc(100% - 20px),
+      currentColor 100%
+    );
+    transition: var(--bs-transition);
+  }
+}

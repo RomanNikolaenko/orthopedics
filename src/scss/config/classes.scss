@@ -1,0 +1,15 @@
+.br-30 {
+  border-radius: rem(20);
+
+  @media (min-width: 768px) {
+    border-radius: rem(30);
+  }
+}
+
+.br-20 {
+  border-radius: rem(12);
+
+  @media (min-width: 768px) {
+    border-radius: rem(20);
+  }
+}

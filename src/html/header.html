@@ -1,0 +1,37 @@
+<header class="header" data-lp>
+  <div class="header__container">
+    <a href="/" class="header__logo" aria-label="logo">
+      <svg width="263" height="52">
+        <use href="./images/sprite.svg#logo" />
+      </svg>
+    </a>
+
+    @@include('./components/header-contacts.html')
+
+    <button class="header__search" data-menus="search" aria-label="search">
+      <svg width="24" height="24">
+        <use href="./images/sprite.svg#search" />
+      </svg>
+    </button>
+
+    @@include('./components/lang.html', {
+    "class": "header__lang"
+    })
+
+    @@include('./components/header-socials.html')
+
+    @@include('./ui/button.html', {
+    "title": "Зв'язатися",
+    "class": "button-56 button-white header__connect",
+    "dataType": "",
+    "svg": false,
+    })
+
+    <button class="header__burger burger-menu" data-menus="burger"
+      aria-label="burger">
+      <svg width="32" height="32">
+        <use href="./images/sprite.svg#burger" />
+      </svg>
+    </button>
+  </div>
+</header>

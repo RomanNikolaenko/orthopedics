@@ -1,0 +1,25 @@
+.lang {
+  display: flex;
+  align-items: center;
+  gap: rem(16);
+
+  &__link {
+    font-family: var(--font-second);
+    font-size: rem(15);
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include interactive {
+      color: var(--primary-400);
+    }
+
+    @include any-hover {
+      color: var(--primary-500);
+    }
+
+    &_active {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

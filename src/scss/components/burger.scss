@@ -1,0 +1,17 @@
+.burger {
+  .burger-open & {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  &__wrap {
+    transform: translateX(-100%);
+    opacity: 0;
+
+    .burger-open & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

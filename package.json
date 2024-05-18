@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomanNikolaenko/optofit"
+    "url": "git+https://github.com/RomanNikolaenko/orthopedics"
   },
   "keywords": [
     "gulp",
@@ -26,9 +26,7 @@
     "scss",
     "html"
   ],
-  "author": "Sergei Chevdar <serj.elessar@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/StarkElessar/gulp-2022#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.27.7",

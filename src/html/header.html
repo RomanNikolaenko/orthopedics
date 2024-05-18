@@ -14,21 +14,16 @@
       </svg>
     </button>
 
-    @@include('./components/lang.html', {
-    "class": "header__lang"
-    })
+    @@include('./components/lang.html', { "class": "header__lang" })
+    @@include('./components/header-socials.html') @@include('./ui/button.html',
+    { "title": "Зв'язатися", "class": "button-56 button-white header__connect",
+    "dataType": "", "svg": false, })
 
-    @@include('./components/header-socials.html')
-
-    @@include('./ui/button.html', {
-    "title": "Зв'язатися",
-    "class": "button-56 button-white header__connect",
-    "dataType": "",
-    "svg": false,
-    })
-
-    <button class="header__burger burger-menu" data-menus="burger"
-      aria-label="burger">
+    <button
+      class="header__burger burger-menu"
+      data-menus="burger"
+      aria-label="burger"
+    >
       <svg width="32" height="32">
         <use href="./images/sprite.svg#burger" />
       </svg>

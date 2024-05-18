@@ -63,7 +63,7 @@ const counter = (el) => {
       decimalPlaces = content.split(',')[1] || '',
       value = unformat(content),
       values = interpolation(fps, easing.quadratic, value);
-      
+
     animateEl(values, 1300, function (current, i, values) {
       var isLast = i === values.length - 1,
         value = round(current, decimalPlaces.length);

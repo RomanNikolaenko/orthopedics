@@ -11,11 +11,11 @@ class Menus extends Popup {
     if (this.menusButton.length) {
       document.addEventListener('click', ({ target }) => {
         const targetData = target.getAttribute('data-menus');
-        
+
         if (targetData === 'search') {
           this.html.classList.toggle(`${targetData}-open`);
           this.toggleBodyLock(this.isSearchOpen);
-          if(this.isSearchOpen) {
+          if (this.isSearchOpen) {
             this.html.classList.remove('burger-open');
           }
         }
@@ -23,40 +23,40 @@ class Menus extends Popup {
         if (targetData === 'burger') {
           this.html.classList.toggle(`${targetData}-open`);
           this.toggleBodyLock(this.isBurgerOpen);
-          if(this.isSearchOpen) {
+          if (this.isSearchOpen) {
             this.html.classList.remove('search-open');
           }
         }
 
         if (target.hasAttribute(`data-close-search`) && this.isSearchOpen) {
-            this.menusClose('search');
-            if(this.isBurgerOpen){
-              this.html.classList.remove('burger-open');
-            }
+          this.menusClose('search');
+          if (this.isBurgerOpen) {
+            this.html.classList.remove('burger-open');
+          }
         }
 
         if (target.hasAttribute(`data-close-burger`) && this.isBurgerOpen) {
           this.menusClose('burger');
-          if(this.isSearchOpen) {
+          if (this.isSearchOpen) {
             this.html.classList.remove('search-open');
           }
-      }
+        }
       });
 
       document.addEventListener('keydown', (e) => {
         const keyCode = e.keyCode;
-      
+
         if (keyCode == 27) {
-          if(this.isSearchOpen) {
+          if (this.isSearchOpen) {
             this.menusClose('search');
-            if(this.isBurgerOpen){
+            if (this.isBurgerOpen) {
               this.html.classList.remove('burger-open');
             }
           }
 
-          if(this.isBurgerOpen) {
+          if (this.isBurgerOpen) {
             this.menusClose('burger');
-            if(this.isSearchOpen) {
+            if (this.isSearchOpen) {
               this.html.classList.remove('search-open');
             }
           }
@@ -70,7 +70,7 @@ class Menus extends Popup {
     this.html.classList.remove(`${nameClass}-open`);
 
     const searchform = document.getElementById('search__form');
-    
+
     if (searchform) {
       const searchInput = searchform.querySelector('#search-input');
       const clean = searchform.querySelector('.search__clean');

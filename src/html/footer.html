@@ -12,8 +12,8 @@
           </div>
         </div>
 
-        <div class="card-border">
-          <div class="card-border__wrap footer__networks">
+        <div class="card-border footer__networks">
+          <div class="card-border__wrap footer__networks-wrap">
             <span>Ми в соцiльних мережах</span>
             @@include('./components/socials.html', {
             "class": "footer__socials",
@@ -22,6 +22,21 @@
           </div>
         </div>
       </div>
+
+      <div class="card-border footer__right">
+        <div class="card-border__wrap footer__right-wrap">
+          <h3 class="burger__body-title">Компанія</h3>
+          <div class="line"></div>
+
+          @@include('./components/nav.html')
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__middle">
+      <img src="../images/svg/footer-logo.svg" width="890" height="555"
+        alt="logo"
+        class="footer__logo">
     </div>
 
     <div class="footer__bottom">

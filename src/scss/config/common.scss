@@ -261,6 +261,14 @@
     margin-block: rem(32);
   }
 
+  &-big {
+    margin-block: rem(32);
+
+    @media (min-width: 768px) {
+      margin-block: rem(60);
+    }
+  }
+
   &.animation-line {
     width: 100%;
   }

@@ -308,3 +308,18 @@
     color: var(--primary-400);
   }
 }
+
+.list-title {
+  font-size: rem(16);
+  line-height: prc(17.28, 16);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-family: var(--font-second);
+
+  @include pseudo-cell(before, initial) {
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter, decimal-leading-zero);
+    font-size: rem(12);
+    line-height: prc(12.96, 12);
+  }
+}

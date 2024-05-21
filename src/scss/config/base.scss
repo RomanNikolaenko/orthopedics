@@ -52,4 +52,5 @@
   width: 100%;
   max-width: rem($maxWidthContainer);
   margin: 0 auto;
+  counter-reset: main-blocks;
 }

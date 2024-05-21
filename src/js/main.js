@@ -9,7 +9,7 @@ import PopupManager from './modules/popup-manager';
 import Menus from './modules/menus';
 // import './helpers/animation';
 // import Tabs from './modules/tabs';
-// import Accordion from './modules/accordion';
+import Accordion from './modules/accordion';
 import './modules/search';
 
 BaseHelpers.checkWebpSupport();
@@ -53,8 +53,9 @@ new Menus().init();
 // 	},
 // });
 
-// new Accordion('.accordion', {
-// 	shouldOpenAll: false, // true
-// 	defaultOpen: [2], // [0,1]
-// 	collapsedClass: 'open',
-// });
+new Accordion('.frequently-asked-questions__accordion', {
+    shouldOpenAll: true, // true
+    defaultOpen: [], // [0,1]
+    defaultOpenAll: false,
+    collapsedClass: 'open',
+  });

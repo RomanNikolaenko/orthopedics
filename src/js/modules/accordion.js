@@ -11,6 +11,7 @@ class Accordion {
     const defaultConfig = {
       shouldOpenAll: false,
       defaultOpen: [],
+      defaultOpenAll: false,
       collapsedClass: 'open',
     };
 
@@ -42,6 +43,14 @@ class Accordion {
     this.accordions.forEach((accordion) => {
       const accordionItems = accordion.querySelectorAll('.accordion__item');
 
+      if (this.options.defaultOpenAll) {
+        accordionItems.forEach((item) => {
+          setTimeout(() => {
+            this.open(item);
+          });
+        }, 200);
+      }
+
       accordionItems.forEach((item, index) => {
         if (this.options.defaultOpen.includes(index)) {
           this.open(item);
@@ -69,9 +78,11 @@ class Accordion {
   }
 
   closeOthers(currentItem, items) {
-    for (const item of items) {
-      if (item !== currentItem && this.isCollapsed(item)) {
-        this.close(item);
+    if (items) {
+      for (const item of items) {
+        if (item !== currentItem && this.isCollapsed(item)) {
+          this.close(item);
+        }
       }
     }
   }

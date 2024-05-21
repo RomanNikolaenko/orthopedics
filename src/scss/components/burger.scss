@@ -29,6 +29,7 @@
   }
 
   &__title {
+    text-align: left;
     max-width: max(rem(380), calc(100% - rem(80)));
   }
 

@@ -13,16 +13,43 @@
   }
 
   &__swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
     padding: rem(12);
     margin-inline: rem(-12);
     margin-top: rem(20);
 
     @media (min-width: 768px) {
       margin-top: rem(48);
+      gap: rem(48);
+    }
+
+    @media (min-width: 1200px) {
+      gap: rem(60);
     }
 
     .swiper-slide {
       height: auto;
+    }
+
+    .swiper-pagination-bullet {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin: 0 rem(10) !important;
+      background-color: #fff;
+      border: 2px solid var(--primary-500);
+    }
+
+    .swiper-pagination-bullet-active-main {
+      background-color: var(--primary-500);
+      border: 2px solid var(--primary-500);
+    }
+
+    .our-doctors-pagination {
+      transform: none !important;
     }
   }
 }

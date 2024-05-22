@@ -19,11 +19,15 @@
 
   &__right {
     &-wrap {
+      display: grid;
+      @include property('gap', 130, 24, 1920, 1200);
+
       color: var(--text-dark);
       padding: rem(30) rem(24);
       background-color: var(--surface-bg);
 
       @media (min-width: 768px) {
+        grid-template-columns: 2fr 1fr;
         padding: rem(48);
       }
     }

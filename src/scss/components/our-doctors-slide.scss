@@ -4,15 +4,12 @@
   align-items: center;
   gap: rem(20);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: rem(20);
-  padding: rem(24) rem(16);
-  box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
+  border-radius: rem(30);
+  padding: rem(8);
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0 18px 0 rgba(180, 174, 167, 0.2);
   background-color: rgba(255, 255, 255, 0.5);
   height: 100%;
-
-  @media (min-width: 768px) {
-    padding: rem(24);
-  }
 
   @media (min-width: 1200px) {
     display: grid;
@@ -23,10 +20,9 @@
     aspect-ratio: 1/1;
     box-shadow: none;
     overflow: hidden;
-
-    &-wrap {
-      background-color: #fefefe;
-    }
+    background-color: #fefefe;
+    border: 2px solid rgba(234, 133, 41, 0.25);
+    border-radius: rem(30);
 
     img {
       width: 100%;
@@ -43,6 +39,10 @@
     gap: rem(20);
     flex: 1 1 auto;
     width: 100%;
+
+    @media (min-width: 1200px) {
+      height: 100%;
+    }
 
     &-title {
       font-size: rem(20);

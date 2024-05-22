@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
-Swiper.use([Pagination, Autoplay]);
+Swiper.use([Pagination, Navigation, Autoplay]);
 
 new Swiper('.our-doctors__swiper', {
   loop: true,
@@ -12,9 +12,17 @@ new Swiper('.our-doctors__swiper', {
     delay: 12000,
     disableOnInteraction: false,
   },
+  navigation: {
+    nextEl: ".our-doctors-button-next",
+    prevEl: ".our-doctors-button-prev",
+  },
   pagination: {
     el: ".our-doctors-pagination",
+    clickable: true, 
     dynamicBullets: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
   },
   breakpoints: {
     576: {

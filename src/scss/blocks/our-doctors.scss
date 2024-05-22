@@ -36,16 +36,34 @@
 
     .swiper-pagination-bullet {
       display: inline-block;
-      width: 11px;
-      height: 11px;
-      margin: 0 rem(10) !important;
-      background-color: #fff;
-      border: 2px solid var(--primary-500);
+      height: initial;
+      width: initial;
+      text-align: center;
+      font-size: 16px;
+      line-height: 100%;
+      background-color: transparent;
+      color: var(--text-light);
+      border-radius: rem(8);
+      padding: rem(3) rem(5);
+      min-width: rem(25);
+      transform: none;
+      opacity: 1;
+      transition: all var(--bs-transition) !important;
+
+      @include interactive {
+        background-color: var(--primary-300);
+        color: #ffffff;
+      }
+
+      @include any-hover {
+        background-color: var(--primary-400);
+        color: #ffffff;
+      }
     }
 
     .swiper-pagination-bullet-active-main {
       background-color: var(--primary-500);
-      border: 2px solid var(--primary-500);
+      color: #ffffff;
     }
 
     .our-doctors-pagination {
@@ -66,6 +84,36 @@
       grid-template-columns: 1fr 1fr;
       margin-top: rem(60);
     }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &-button-next,
+  &-button-prev {
+    background-color: var(--text-light);
+    mask-image: url('../../images/svg/arrow-slider.svg');
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: rem(9) rem(14);
+    width: rem(24);
+    height: rem(25);
+    cursor: pointer;
+
+    @include interactive {
+      background-color: var(--primary-500);
+    }
+
+    @include any-hover {
+      background-color: var(--primary-500);
+    }
+  }
+
+  &-button-next {
+    transform: rotate(180deg);
   }
 }
 

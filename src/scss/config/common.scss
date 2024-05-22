@@ -274,7 +274,7 @@
   height: 1px;
   margin-block: rem(20);
   background-color: rgba(98, 80, 15, 0.15);
-  transition: width var(--bs-transition);
+  transition: width 0.8s linear;
 
   @media (min-width: 768px) {
     margin-block: rem(32);

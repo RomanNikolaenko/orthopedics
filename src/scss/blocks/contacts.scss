@@ -1,0 +1,204 @@
+.contacts {
+  &__header {
+    display: grid;
+    gap: rem(20);
+
+    @media (min-width: 768px) {
+      grid-template-columns: max-content 1fr;
+    }
+  }
+
+  &__section {
+    max-width: rem(140);
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(20);
+    margin-top: rem(30);
+
+    @media (min-width: 768px) {
+      margin-top: rem(48);
+      gap: rem(30);
+    }
+
+    > * {
+      aspect-ratio: 1/1;
+      height: 100%;
+      width: 100%;
+      max-width: rem(320);
+
+      @media (min-width: 768px) {
+        max-width: calc(50% - rem(30) / 2);
+      }
+
+      @media (min-width: 1200px) {
+        max-width: calc(33.333% - rem(60) / 3);
+      }
+
+      @media (min-width: 1640px) {
+        max-width: calc(25% - rem(90) / 4);
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: var(--surface-white);
+    box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
+    padding: rem(20);
+    font-size: rem(22);
+    color: var(--text-title);
+
+    @media (min-width: 1200px) {
+      font-size: rem(27);
+    }
+
+    @media (min-width: 1200px) {
+      font-size: rem(32);
+    }
+  }
+
+  &__email {
+    display: flex;
+    hyphens: auto;
+    word-break: break-all;
+    gap: rem(12);
+    transition: color var(--bs-transition);
+
+    @include interactive {
+      color: var(--primary-400);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+
+    @include pseudo-cell(before, initial) {
+      flex: 0 0 auto;
+      width: rem(21);
+      height: rem(16);
+      background-color: currentColor;
+      mask-image: url('../../images/svg/email.svg');
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      mask-position: center center;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    gap: rem(12);
+    transition: color var(--bs-transition);
+
+    @include interactive {
+      color: var(--primary-400);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+
+    @include pseudo-cell(before, initial) {
+      flex: 0 0 auto;
+      width: rem(20);
+      height: rem(20);
+      background-color: currentColor;
+      mask-image: url('../../images/svg/phone.svg');
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      mask-position: center center;
+    }
+  }
+
+  &__inst {
+    aspect-ratio: 1 / 1;
+    transition: filter var(--bs-transition);
+
+    @include interactive {
+      filter: contrast(0.9);
+    }
+
+    @include any-hover {
+      filter: contrast(0.95);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+
+  &__address {
+    flex-direction: column;
+    gap: rem(12);
+    padding-block: rem(60);
+    @include property('padding-inline', 60, 30, 1920, 768);
+    font-size: rem(17);
+    line-height: 1.2;
+
+    &-time {
+      display: flex;
+      gap: rem(8);
+      width: 100%;
+
+      @include pseudo-cell(before, initial) {
+        flex: 0 0 auto;
+        width: rem(14);
+        height: rem(14);
+        background-image: url('../../images/svg/clock.svg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-top: rem(3);
+      }
+
+      span {
+        font-weight: 300;
+      }
+    }
+
+    &-address {
+      display: flex;
+      gap: rem(8);
+      font-size: rem(24);
+      letter-spacing: -0.01em;
+      width: 100%;
+
+      @media (min-width: 1200px) {
+        font-size: rem(32);
+      }
+
+      @include pseudo-cell(before, initial) {
+        flex: 0 0 auto;
+        width: rem(16);
+        height: rem(20);
+        background-image: url('../../images/svg/mark.svg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-top: rem(4);
+
+        @media (min-width: 1200px) {
+          margin-top: rem(10);
+        }
+      }
+    }
+
+    &-link {
+      align-self: flex-start;
+      margin-left: rem(24);
+      color: var(--primary-500);
+      text-transform: none;
+      font-weight: 400;
+      transition: color var(--bs-transition);
+    }
+  }
+}

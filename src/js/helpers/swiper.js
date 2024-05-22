@@ -8,10 +8,10 @@ new Swiper('.our-doctors__swiper', {
   slidesPerView: 1,
   spaceBetween: 30,
   speed: 2000,
-  // autoplay: {
-  //   delay: 12000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 12000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".our-doctors-pagination",
     dynamicBullets: true,

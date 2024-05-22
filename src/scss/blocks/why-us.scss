@@ -56,10 +56,7 @@
 
   &__title {
     color: #fff;
-
-    @media (min-width: 1440px) {
-      font-size: rem(51);
-    }
+    max-width: rem(1425);
 
     .title__border {
       border-color: currentColor;

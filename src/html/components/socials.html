@@ -1,4 +1,5 @@
 <ul class="socials @@class">
+  @@if(fb){
   <li class="socials__item">
     <a href="#" class="socials__link" aria-label="fb">
       <svg width="11" height="24">
@@ -6,6 +7,8 @@
       </svg>
     </a>
   </li>
+  }
+  @@if(inst){
   <li class="socials__item">
     <a href="#" class="socials__link" aria-label="inst">
       <svg width="21" height="20">
@@ -13,6 +16,8 @@
       </svg>
     </a>
   </li>
+  }
+  @@if(youtube) {
   <li class="socials__item">
     <a href="#" class="socials__link" aria-label="youtube">
       <svg width="21" height="16">
@@ -20,6 +25,7 @@
       </svg>
     </a>
   </li>
+  }
   @@if(tg) {
   <li class="socials__item">
     <a href="#" class="socials__link" aria-label="tg">

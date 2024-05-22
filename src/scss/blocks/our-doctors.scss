@@ -1,0 +1,28 @@
+.our-doctors {
+  &__header {
+    display: grid;
+    gap: rem(20);
+
+    @media (min-width: 768px) {
+      grid-template-columns: max-content 1fr;
+    }
+  }
+
+  &__section {
+    max-width: rem(140);
+  }
+
+  &__swiper {
+    padding: rem(12);
+    margin-inline: rem(-12);
+    margin-top: rem(20);
+
+    @media (min-width: 768px) {
+      margin-top: rem(48);
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}

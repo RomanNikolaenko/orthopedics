@@ -6,7 +6,7 @@
   gap: rem(8);
   box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
   border-radius: 100vmax;
-  padding: rem(12) rem(20);
+  padding: rem(12) rem(16);
   width: 100%;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -77,6 +77,21 @@
       background-color: var(--primary-500);
       border-color: var(--primary-500);
       color: #fff;
+    }
+  }
+
+  &.button-arrow {
+    line-height: 1;
+
+    @include pseudo-cell(after, initial) {
+      flex: 0 0 auto;
+      width: rem(11);
+      height: rem(13);
+      background-color: currentColor;
+      mask-image: url('../../images/svg/arrow-up.svg');
+      mask-size: contain;
+      mask-position: center center;
+      mask-repeat: no-repeat;
     }
   }
 }
@@ -278,8 +293,11 @@
   text-align: right;
   font-size: rem(24);
   line-height: 120%;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--text-title);
+  max-width: rem(1630);
+  margin-left: auto;
 
   @media (min-width: 768px) {
     font-size: rem(28);
@@ -302,7 +320,7 @@
     text-align: center;
     border: 2px solid rgba(234, 133, 41, 0.5);
     border-radius: 100vmax;
-    padding: rem(4) rem(24);
+    padding: rem(4) rem(20);
   }
 
   &__color {

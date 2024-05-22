@@ -1,0 +1,24 @@
+<div class="our-doctors-slide">
+    <div class="card-border our-doctors-slide__img">
+        <div class="card-border__wrap our-doctors-slide__img-wrap">
+            <img src="../../images/our-doctors.png" width="300" height="300"
+                alt>
+        </div>
+    </div>
+
+    <div class="our-doctors-slide__desc">
+        <h3 class="our-doctors-slide__desc-title">@@title</h3>
+        <h4 class="our-doctors-slide__desc-position">@@position</h4>
+        @@if(socials) {
+        @@include('./socials.html', {
+        "class": "footer__socials",
+        "fb": true,
+        "inst": true,
+        "youtube": false,
+        "tg": true,
+        })
+        }
+        <a href="#" class="button button-light button-arrow">дізнатися
+            більше</a>
+    </div>
+</div>

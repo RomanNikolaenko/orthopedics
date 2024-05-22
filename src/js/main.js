@@ -2,7 +2,7 @@ import { useDynamicAdapt } from './libs/adaptive.js';
 useDynamicAdapt();
 
 import './helpers/animation';
-// import './helpers/swiper';
+import './helpers/swiper';
 import BaseHelpers from './helpers/base-helpers';
 
 import PopupManager from './modules/popup-manager';

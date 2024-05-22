@@ -32,6 +32,7 @@ They might well be outsourced to an external stylesheet of course.
 	.svg-mark-dims { width: 17px; height: 20px; }
 	.svg-phone-dims { width: 14px; height: 14px; }
 	.svg-search-dims { width: 24px; height: 24px; }
+	.svg-service-card4-dims { width: 64px; height: 64px; }
 </style>
 <!--
 ====================================================================================================
@@ -67,6 +68,7 @@ for further details on how to create this embeddable sprite variant.
 		<symbol fill="none" viewBox="0 0 17 20" id="mark" xmlns="http://www.w3.org/2000/svg"><path d="M16.015 8.508c0 5.362-7.508 10.367-7.508 10.367S1 13.87 1 8.508a7.507 7.507 0 0115.015 0z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.506 10.294a1.787 1.787 0 100-3.575 1.787 1.787 0 000 3.575z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 		<symbol fill="none" viewBox="0 0 14 14" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M2.816 6.059a11.782 11.782 0 005.125 5.125l1.711-1.71c.21-.21.521-.28.794-.187a8.872 8.872 0 002.776.443.78.78 0 01.778.778v2.714a.78.78 0 01-.778.778C5.92 14 0 8.081 0 .778A.78.78 0 01.778 0H3.5a.78.78 0 01.778.778c0 .972.155 1.905.443 2.776a.78.78 0 01-.194.794l-1.711 1.71z" fill="currentColor"/></symbol>
 		<symbol fill="none" viewBox="0 0 24 24" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M22.717 22.715l-5.274-5.274m0 0A9.714 9.714 0 103.706 3.703a9.714 9.714 0 0013.737 13.738z" stroke="currentColor" stroke-width="1.714" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+		<symbol fill="none" viewBox="0 0 64 64" id="service-card4" xmlns="http://www.w3.org/2000/svg"><path d="M51.375 43.333a4.667 4.667 0 100-9.333 4.667 4.667 0 000 9.333zM33.375 19.333a5.333 5.333 0 100-10.666 5.333 5.333 0 000 10.666zM28.841 33.2l4.6 2.067-2.533 3.8c-.2.333-.4.733-.466 1.2a2.72 2.72 0 002.333 3.066h9.933c1.467 0 2.667-1.2 2.667-2.666l-.667-7.467c-.066-.733-.733-1.267-1.466-1.2-.734.067-1.267.733-1.2 1.467L42.508 38h-6.267l.4-3.2c.067-.533-.2-1.133-.733-1.333l-6-2.667c-.667-.267-1.466 0-1.733.667-.334.666 0 1.466.666 1.733zM56.558 46.086H27.89v-.667h28.667v.667z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M36.041 30.667c1 0 2-.6 2.4-1.534.6-1.333 0-2.933-1.333-3.533L29.375 22l-3-6.6c-1.467-1.667-4-1.867-5.667-.4l-12 10.4c-1 .867-1.533 1.933-1.333 3.6l1.333 11.267-1.333 12.8c-.133 1.466.933 2.8 2.4 2.933h.266c1.334 0 2.534-1 2.667-2.4l1.333-13.067v-.6L13.708 37l3 5-.666 11.2c-.067 1.467 1.066 2.733 2.533 2.8h.133c1.4 0 2.6-1.067 2.667-2.533l.666-12c0-.534-.133-1.067-.4-1.534l-6-10 8.267-7.133 1 2.267c.267.6.733 1.066 1.333 1.333l8.667 4c.4.2.733.267 1.133.267z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
 </svg>
 
 <!--
@@ -239,6 +241,17 @@ embedded above. They may be styled via CSS.
 					</div>
 					<h2>search</h2>
 				</li>
+				<li title="service-card4">
+					<div class="icon-box">
+
+						<!-- service-card4 -->
+						<svg class="svg-service-card4-dims">
+							<use xlink:href="#service-card4"></use>
+						</svg>
+
+					</div>
+					<h2>service-card4</h2>
+				</li>
 			</ul>
 
 <!--
@@ -403,6 +416,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>search</h2>
 				</li>
+				<li title="service-card4">
+					<div class="icon-box">
+
+						<!-- service-card4 -->
+						<svg class="svg-service-card4-dims">
+							<use xlink:href="../sprite.svg#service-card4"></use>
+						</svg>
+
+					</div>
+					<h2>service-card4</h2>
+				</li>
 			</ul>
 
 <!--
@@ -411,7 +435,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Wed, 22 May 2024 09:55:21 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+			<p>Generated at Wed, 22 May 2024 11:07:25 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

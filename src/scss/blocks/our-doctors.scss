@@ -146,6 +146,7 @@
       letter-spacing: 0.01em;
       text-transform: uppercase;
       color: var(--text-title);
+      text-wrap: balance;
 
       @media (min-width: 768px) {
         font-size: rem(28);
@@ -196,5 +197,13 @@
     .button {
       grid-column: 1/-1;
     }
+  }
+
+  &__email {
+    grid-column: 1/-1;
+  }
+
+  &__checkbox {
+    grid-column: 1/-1;
   }
 }

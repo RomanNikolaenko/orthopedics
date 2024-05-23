@@ -1,11 +1,11 @@
 .two-buttons {
   display: grid;
   gap: rem(20);
-  margin-top: rem(24);
+  margin-top: rem(20);
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: rem(48);
+    margin-top: rem(32);
   }
 
   &__wrap {

@@ -98,6 +98,7 @@
     width: rem(24);
     height: rem(25);
     cursor: pointer;
+    transition: background-color var(--bs-transition);
 
     @include interactive {
       background-color: var(--primary-500);

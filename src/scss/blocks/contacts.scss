@@ -18,10 +18,16 @@
     justify-content: center;
     gap: rem(20);
     margin-top: rem(30);
+    margin-bottom: rem(30);
 
     @media (min-width: 768px) {
       margin-top: rem(48);
+      margin-bottom: rem(48);
       gap: rem(30);
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: rem(60);
     }
 
     > * {

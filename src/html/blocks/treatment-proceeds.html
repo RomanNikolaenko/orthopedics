@@ -1,0 +1,38 @@
+<div class="treatment-proceeds">
+    <div class="treatment-proceeds__header">
+        <h3 class="list-title treatment-proceeds__section">/ Як проходе
+            лIкування</h3>
+
+        <h2 class="title treatment-proceeds__title"><span
+                class="title__border">Лікування деформації голови</span>
+            <br>
+            <i>
+                за допомогою ортопедичного шолому проходить <span
+                    class="title__color">декілька етапів</span>
+            </i>
+        </h2>
+    </div>
+
+    <ul class="treatment-proceeds__list">
+        @@include('../components/treatment-proceeds-card.html', {
+        "img": "treatment-proceeds1.svg",
+        "title": "Консультація та Діагностика",
+        "card": "1",
+        })
+        @@include('../components/treatment-proceeds-card.html', {
+        "img": "treatment-proceeds2.svg",
+        "title": "Виготовлення Ортопедичного Шолому",
+        "card": "2",
+        })
+        @@include('../components/treatment-proceeds-card.html', {
+        "img": "treatment-proceeds3.svg",
+        "title": "Контроль та корекція",
+        "card": "3",
+        })
+        @@include('../components/treatment-proceeds-card.html', {
+        "img": "treatment-proceeds4.svg",
+        "title": "Завершення Лікування",
+        "card": "4",
+        })
+    </ul>
+</div>

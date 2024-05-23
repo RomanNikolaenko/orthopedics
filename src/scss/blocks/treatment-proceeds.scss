@@ -74,17 +74,24 @@
 
   &__item {
     position: relative;
-    padding-left: rem(22);
+    list-style: disc;
+    // padding-left: rem(22);
 
-    @include pseudo-cell(before) {
-      left: 0;
-      top: rem(5);
+    &::marker {
       width: rem(10);
       height: rem(10);
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background-color: var(--primary-500);
+      color: var(--primary-500);
     }
+
+    // @include pseudo-cell(before) {
+    //   left: 0;
+    //   top: rem(5);
+    //   width: rem(10);
+    //   height: rem(10);
+    //   flex: 0 0 auto;
+    //   border-radius: 50%;
+    //   background-color: var(--primary-500);
+    // }
   }
 
   &__img {

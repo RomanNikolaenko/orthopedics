@@ -82,7 +82,7 @@
     }
 
     @include any-hover {
-      color: var(--primary-400);
+      color: var(--primary-500);
     }
 
     @include pseudo-cell(before, initial) {
@@ -107,7 +107,7 @@
     }
 
     @include any-hover {
-      color: var(--primary-400);
+      color: var(--primary-500);
     }
 
     @include pseudo-cell(before, initial) {

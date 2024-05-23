@@ -32,7 +32,7 @@
 
   &.button-orange {
     color: #fff;
-    background-color: var(--primary-400);
+    background-color: var(--primary-500);
     border: 1.5px solid #fff;
 
     @include interactive {
@@ -64,18 +64,19 @@
   }
 
   &.button-white {
-    color: var(--primary-400);
+    color: var(--primary-500);
     background-color: #fff;
-    border: 1.5px solid var(--primary-400);
+    border: 1.5px solid var(--primary-500);
 
     @include interactive {
       background-color: var(--primary-400);
+      border-color: var(--primary-400);
       color: #fff;
     }
 
     @include any-hover {
-      background-color: var(--primary-500);
-      border-color: var(--primary-500);
+      background-color: var(--primary-600);
+      border-color: var(--primary-600);
       color: #fff;
     }
   }
@@ -137,11 +138,11 @@
   transition: color var(--bs-transition);
 
   @include interactive {
-    color: var(--primary-300);
+    color: var(--primary-400);
   }
 
   @include any-hover {
-    color: var(--primary-400);
+    color: var(--primary-500);
   }
 
   @include pseudo-cell(before) {
@@ -188,8 +189,7 @@
     font-size: rem(18);
     font-family: var(--font-second);
     line-height: 1.3;
-
-    color: var(--primary-400);
+    color: var(--primary-500);
 
     @include interactive {
       &::placeholder {
@@ -296,7 +296,7 @@
 .title {
   text-align: right;
   font-size: rem(24);
-  line-height: 120%;
+  line-height: 1.13;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--text-title);
@@ -323,12 +323,13 @@
     display: inline-block;
     text-align: center;
     border: 2px solid rgba(234, 133, 41, 0.5);
+    line-height: 0.95;
     border-radius: 100vmax;
-    padding: rem(4) rem(20);
+    padding: rem(0) rem(20);
   }
 
   &__color {
-    color: var(--primary-400);
+    color: var(--primary-500);
   }
 
   br {
@@ -360,5 +361,5 @@
 }
 
 .orange {
-  color: var(--primary-400);
+  color: var(--primary-500);
 }

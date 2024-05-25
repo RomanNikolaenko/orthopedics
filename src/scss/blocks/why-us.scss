@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: rem(750);
+  min-height: rem(500);
   box-shadow: 0px 0px 14px 0px #b4aea714;
   padding: rem(34) rem(20);
   border-radius: rem(30);
@@ -66,7 +66,7 @@
   &__cards {
     display: grid;
     gap: rem(10);
-    margin-top: rem(32);
+    @include property('margin-top', 100, 16, 1680);
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
@@ -91,21 +91,38 @@
     line-height: 120%;
 
     @media (min-width: 380px) {
-      grid-template-columns: rem(45) 1fr;
+      grid-template-columns: rem(32) 1fr;
     }
 
     @media (min-width: 768px) {
       padding: rem(20) rem(24);
     }
 
+    @media (min-width: 1680px) {
+      grid-template-columns: rem(45) 1fr;
+    }
+
+    &-title {
+      font-size: rem(17);
+
+      @media (min-width: 1680px) {
+        font-size: rem(18);
+      }
+    }
+
     &-img {
       display: block;
-      max-width: rem(45);
-      max-height: rem(45);
+      max-width: rem(32);
+      max-height: rem(32);
       width: 100%;
       height: 100%;
       object-fit: contain;
       object-position: center center;
+
+      @media (min-width: 1680px) {
+        max-width: rem(45);
+        max-height: rem(45);
+      }
     }
   }
 }

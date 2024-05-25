@@ -19,10 +19,8 @@
     gap: rem(30);
     padding: rem(12);
     margin-inline: rem(-12);
-    margin-top: rem(20);
 
     @media (min-width: 768px) {
-      margin-top: rem(48);
       gap: rem(48);
     }
 
@@ -145,7 +143,7 @@
       color: var(--text-title);
       text-wrap: balance;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1440px) {
         font-size: rem(28);
       }
     }
@@ -187,7 +185,7 @@
     gap: rem(20);
     width: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1440px) {
       grid-template-columns: 1fr 1fr;
     }
 

@@ -52,20 +52,20 @@
 
       @media (min-width: 768px) {
         padding: rem(30);
-        font-size: rem(26);
       }
 
       @media (min-width: 1200px) {
         padding: rem(40) rem(60);
-        font-size: rem(30);
       }
 
       @media (min-width: 1440px) {
         padding: rem(40) rem(80);
+        font-size: rem(28);
       }
 
       @media (min-width: 1680px) {
         padding: rem(40) rem(100);
+        font-size: rem(30);
       }
 
       > * {
@@ -245,17 +245,17 @@
     max-width: rem(890);
 
     @media (min-width: 576px) {
-      width: 80%;
+      width: 70%;
       margin-top: rem(80);
     }
 
     @media (min-width: 768px) {
-      width: 70%;
+      width: 60%;
       margin-top: rem(100);
     }
 
     @media (min-width: 1200px) {
-      width: 60%;
+      width: 50%;
       margin-top: rem(120);
     }
 

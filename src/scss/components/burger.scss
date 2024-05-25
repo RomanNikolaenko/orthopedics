@@ -60,10 +60,17 @@
   }
 
   &__body-title {
-    font-size: rem(24);
+    font-size: rem(20);
     line-height: 1;
     text-transform: uppercase;
-    opacity: 0.35;
+    color: rgba(93, 89, 85, 0.35);
+    padding-bottom: rem(18);
+    margin-bottom: rem(18);
+    border-bottom: 1px solid rgba(93, 89, 85, 0.15);
+
+    @media (min-width: 1680px) {
+      font-size: rem(24);
+    }
   }
 
   &__left-column {

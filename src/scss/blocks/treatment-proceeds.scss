@@ -17,48 +17,88 @@
   }
 
   &__list {
+    counter-reset: list-treatment;
     display: grid;
     gap: rem(20);
-    margin-top: rem(24);
 
     @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
-    }
-
-    @media (min-width: 1200px) {
-      margin-top: rem(48);
     }
   }
 }
 
 .treatment-proceeds-card {
+  counter-increment: list-treatment;
+
   &__inner {
     height: 100%;
   }
 
   &__wrap {
+    position: relative;
     display: grid;
-    gap: rem(30);
-    padding: rem(32) rem(20) rem(32) rem(40);
+    align-content: flex-start;
+    padding: rem(16) rem(20);
     background-color: #ffffff;
 
     @media (min-width: 1200px) {
-      grid-template-columns: rem(150) 1fr;
-      gap: rem(60);
-      padding: rem(48);
+      padding: rem(16) rem(32);
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1680px) {
       grid-template-columns: rem(230) 1fr;
       padding: rem(64);
+      gap: rem(40);
     }
   }
 
   &__left {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: rem(20);
+    gap: rem(12) rem(16);
+
+    @media (max-width: 424.98px) {
+      position: relative;
+    }
+
+    @include pseudo-cell(after, initial) {
+      content: counter(list-treatment, decimal-leading-zero);
+      font-size: rem(12);
+      text-align: center;
+      color: var(--primary-500);
+
+      align-self: flex-start;
+      margin-top: rem(8);
+      margin-left: auto;
+
+      @media (max-width: 424.98px) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      @media (min-width: 1680px) {
+        position: absolute;
+        top: rem(64);
+        right: rem(64);
+        transform: translate(100%, -100%);
+      }
+    }
+
+    @media (max-width: 424.98px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 1679.98px) {
+      padding-bottom: rem(16);
+      margin-bottom: rem(16);
+      border-bottom: 1px solid rgba(234, 133, 41, 0.25);
+    }
+
+    @media (min-width: 1680px) {
+      flex-direction: column;
+    }
   }
 
   &__right {
@@ -66,6 +106,7 @@
     gap: rem(24);
     font-family: var(--font-second);
     color: var(--text-light);
+    padding-left: 24px;
 
     strong,
     b {
@@ -88,11 +129,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: rem(120);
-    height: rem(120);
+    flex: 0 0 auto;
+    width: rem(60);
+    height: rem(60);
     border-radius: 50%;
     background-color: var(--surface-light);
+
+    @media (min-width: 425px) {
+      width: rem(96);
+      height: rem(96);
+    }
 
     img {
       width: 52%;

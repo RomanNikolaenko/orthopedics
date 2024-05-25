@@ -27,11 +27,15 @@ new Swiper('.our-doctors__swiper', {
     },
 
     991: {
-      slidesPerView: 3,
+      slidesPerView: 2.3,
     },
 
     1200: {
       slidesPerView: 2,
+    },
+
+    1440: {
+      slidesPerView: 2.3,
     },
 
     1640: {

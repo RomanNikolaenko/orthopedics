@@ -20,11 +20,11 @@
       color: var(--neutral-20);
 
       @include interactive {
-        color: var(--primary-400);
+        color: var(--primary-300);
       }
 
       @include any-hover {
-        color: var(--primary-500);
+        color: var(--primary-400);
       }
     }
 
@@ -33,12 +33,12 @@
 
       @include interactive {
         color: #fff;
-        background-color: var(--primary-400);
+        background-color: var(--primary-300);
       }
 
       @include any-hover {
         color: #fff;
-        background-color: var(--primary-600);
+        background-color: var(--primary-400);
       }
     }
 

@@ -36,13 +36,13 @@
     border: 1.5px solid #fff;
 
     @include interactive {
-      background-color: var(--primary-400);
-      border-color: var(--primary-400);
+      background-color: var(--primary-300);
+      border-color: var(--primary-300);
     }
 
     @include any-hover {
-      background-color: var(--primary-600);
-      border-color: var(--primary-600);
+      background-color: var(--primary-400);
+      border-color: var(--primary-400);
     }
   }
 
@@ -52,7 +52,7 @@
     border: 1.5px solid var(--primary-400);
 
     @include interactive {
-      background-color: var(--primary-400);
+      background-color: var(--primary-300);
       color: #fff;
     }
 
@@ -69,14 +69,14 @@
     border: 1.5px solid var(--primary-500);
 
     @include interactive {
-      background-color: var(--primary-400);
-      border-color: var(--primary-400);
+      background-color: var(--primary-300);
+      border-color: var(--primary-300);
       color: #fff;
     }
 
     @include any-hover {
-      background-color: var(--primary-600);
-      border-color: var(--primary-600);
+      background-color: var(--primary-400);
+      border-color: var(--primary-400);
       color: #fff;
     }
   }
@@ -112,11 +112,11 @@
   transition: all var(--bs-transition);
 
   @include interactive {
-    background-color: var(--primary-400);
+    background-color: var(--primary-300);
   }
 
   @include any-hover {
-    background-color: var(--primary-600);
+    background-color: var(--primary-400);
   }
 }
 
@@ -138,11 +138,11 @@
   transition: color var(--bs-transition);
 
   @include interactive {
-    color: var(--primary-400);
+    color: var(--primary-300);
   }
 
   @include any-hover {
-    color: var(--primary-500);
+    color: var(--primary-400);
   }
 
   @include pseudo-cell(before) {

@@ -67,11 +67,11 @@
     transition: color var(--bs-transition);
 
     @include interactive {
-      color: var(--primary-400);
+      color: var(--primary-300);
     }
 
     @include any-hover {
-      color: var(--primary-500);
+      color: var(--primary-400);
     }
 
     @include pseudo-cell(before, initial) {
@@ -97,11 +97,11 @@
     transition: color var(--bs-transition);
 
     @include interactive {
-      color: var(--primary-400);
+      color: var(--primary-300);
     }
 
     @include any-hover {
-      color: var(--primary-500);
+      color: var(--primary-400);
     }
 
     @include pseudo-cell(before, initial) {
@@ -210,11 +210,11 @@
       transition: color var(--bs-transition);
 
       @include interactive {
-        color: var(--primary-400);
+        color: var(--primary-300);
       }
 
       @include any-hover {
-        color: var(--primary-600);
+        color: var(--primary-400);
       }
     }
   }

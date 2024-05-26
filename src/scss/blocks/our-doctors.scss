@@ -42,12 +42,12 @@
       transition: all var(--bs-transition) !important;
 
       @include interactive {
-        background-color: var(--primary-400);
+        background-color: var(--primary-300);
         color: #ffffff;
       }
 
       @include any-hover {
-        background-color: var(--primary-500);
+        background-color: var(--primary-400);
         color: #ffffff;
       }
     }
@@ -99,11 +99,11 @@
     transition: background-color var(--bs-transition);
 
     @include interactive {
-      background-color: var(--primary-500);
+      background-color: var(--primary-300);
     }
 
     @include any-hover {
-      background-color: var(--primary-500);
+      background-color: var(--primary-400);
     }
   }
 

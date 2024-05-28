@@ -141,11 +141,14 @@
     align-self: flex-start;
     font-size: rem(16);
     font-family: var(--font-second);
-    @include line-clamp(4);
     color: #fff;
 
     @media (min-width: 576px) and (max-width: 1439.98px) {
       grid-column: 1/-1;
+    }
+
+    > * {
+      @include line-clamp(4);
     }
   }
 

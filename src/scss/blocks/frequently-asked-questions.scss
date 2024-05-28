@@ -13,9 +13,15 @@
     max-width: rem(160);
   }
 
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__questions {
     margin-left: auto;
     margin-top: rem(20);
+    margin-bottom: auto;
     box-shadow: none;
 
     @media (min-width: 768px) {
@@ -61,6 +67,11 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto;
   margin-top: rem(20);
+  margin-bottom: rem(-32);
+
+  @media (min-width: 768px) {
+    margin-bottom: rem(-60);
+  }
 
   @media (min-width: 1200px) {
     margin-top: rem(34);

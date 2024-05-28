@@ -133,23 +133,36 @@
   padding-block: rem(2);
   text-transform: uppercase;
   color: var(--text-title);
-  border-bottom: 1px solid currentColor;
   background-color: transparent;
-  transition: color var(--bs-transition);
+  transition: all var(--bs-transition);
 
   @include interactive {
-    color: var(--primary-300);
+    &::after {
+      width: 80%;
+    }
   }
 
   @include any-hover {
-    color: var(--primary-400);
+    &:after {
+      transform: translate(0, -50%) scale(1.1);
+    }
+
+    span::after {
+      width: 85%;
+    }
   }
 
-  @include pseudo-cell(before) {
-    top: 0;
-    left: 0;
-    width: calc(100% + rem(17));
-    height: 100%;
+  span {
+    transition: inherit;
+
+    @include pseudo-cell(after) {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transition: inherit;
+    }
   }
 
   &__with-svg {
@@ -158,7 +171,7 @@
     @include pseudo-cell(after) {
       top: 50%;
       right: rem(-17);
-      transform: translate(0, -50%);
+      transform: translate(0, -50%) scale(1);
       width: rem(11);
       height: rem(13);
       background-color: currentColor;
@@ -166,6 +179,19 @@
       mask-size: contain;
       mask-position: center center;
       mask-repeat: no-repeat;
+      transition: inherit;
+    }
+
+    span {
+      transition: inherit;
+
+      @include pseudo-cell(before) {
+        top: 0;
+        left: 0;
+        width: calc(100% + rem(17));
+        height: 100%;
+        transition: inherit;
+      }
     }
   }
 }

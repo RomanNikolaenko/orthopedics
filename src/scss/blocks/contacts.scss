@@ -1,4 +1,7 @@
 .contacts {
+  position: relative;
+  z-index: 2;
+
   &__header {
     display: grid;
     gap: rem(20);
@@ -6,10 +9,6 @@
     @media (min-width: 768px) {
       grid-template-columns: max-content 1fr;
     }
-  }
-
-  &__section {
-    max-width: rem(140);
   }
 
   &__wrap {
@@ -22,6 +21,10 @@
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, minmax(min(rem(260), 100%), rem(320)));
       margin-bottom: rem(48);
+
+      > * {
+        aspect-ratio: 1/1;
+      }
     }
 
     @media (min-width: 1200px) {
@@ -33,21 +36,21 @@
     @media (min-width: 1680px) {
       gap: rem(30);
     }
-
-    > * {
-      aspect-ratio: 1/1;
-    }
   }
 
   &__link {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
+    border-radius: rem(13);
     background-color: var(--surface-white);
     box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
-    padding: rem(16);
+    padding: rem(18) rem(10);
     color: var(--text-title);
+
+    @media (min-width: 768px) {
+      border-radius: 100%;
+    }
 
     @media (min-width: 1440px) {
       font-size: rem(25);
@@ -139,10 +142,13 @@
   &__address {
     flex-direction: column;
     gap: rem(12);
-    padding-block: rem(60);
-    @include property('padding-inline', 60, 30, 1920, 768);
     font-size: rem(17);
     line-height: 1.2;
+    @include property('padding-inline', 60, 30, 1920, 768);
+
+    @media (min-width: 768px) {
+      padding-block: rem(60);
+    }
 
     &-time {
       display: flex;
@@ -171,9 +177,12 @@
     }
 
     &-address {
+      position: relative;
       display: flex;
+      flex-direction: column;
       gap: rem(8);
       font-size: rem(16);
+      padding-left: rem(24);
       letter-spacing: -0.01em;
       width: 100%;
 
@@ -181,11 +190,13 @@
         font-size: rem(25);
       }
 
-      @media (min-width: 1680px) {
+      @media (min-width: 1920px) {
         font-size: rem(32);
       }
 
-      @include pseudo-cell(before, initial) {
+      @include pseudo-cell(before) {
+        top: 0;
+        left: 0;
         flex: 0 0 auto;
         width: rem(16);
         height: rem(20);
@@ -193,11 +204,6 @@
         background-size: 100% 100%;
         background-position: center center;
         background-repeat: no-repeat;
-        margin-top: rem(4);
-
-        @media (min-width: 1200px) {
-          margin-top: rem(10);
-        }
       }
     }
 

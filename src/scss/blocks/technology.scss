@@ -1,16 +1,18 @@
 .more-helmet-technology {
+  position: relative;
+  z-index: 2;
   display: grid;
   gap: rem(20);
 
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(rem(690), 1fr) 1fr;
   }
 
   &__left {
     display: flex;
     flex-direction: column;
     gap: rem(30);
-    padding: rem(24) rem(20);
+    padding: rem(24) rem(12);
     border-radius: rem(30);
     backdrop-filter: blur(12px);
     box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
@@ -70,23 +72,26 @@
 
   &__grid {
     display: grid;
-    gap: rem(20);
+    grid-template-columns: 1fr 1fr;
+    gap: rem(12);
 
-    @media (min-width: 1440px) {
+    @media (min-width: 768px) {
       grid-template-columns: min(rem(240), 100%) 1fr;
-      grid-template-rows: auto auto;
+      grid-template-rows: auto 1fr;
     }
 
     &-img1 {
       display: block;
       object-fit: cover;
       object-position: center center;
-      aspect-ratio: 1/1;
+      width: 100%;
+      height: 100%;
+      min-height: rem(160);
       border-radius: rem(25);
       box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
       margin: 0 auto;
 
-      @media (min-width: 1440px) {
+      @media (min-width: 768px) {
         grid-row: 1/-1;
       }
     }
@@ -94,24 +99,30 @@
     &-img2 {
       display: block;
       width: 100%;
-      height: rem(120);
+      height: 100%;
       object-fit: cover;
       object-position: center center;
       border-radius: rem(20);
       box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
-      order: 2;
 
-      @media (min-width: 1440px) {
-        order: initial;
+      @media (min-width: 768px) {
+        height: rem(120);
       }
     }
 
     &-text {
       font-family: var(--font-second);
       text-align: justify;
+      font-size: rem(15);
+      grid-column: 1/-1;
 
-      @media (min-width: 1440px) {
+      @media (min-width: 768px) {
+        font-size: rem(16);
         grid-column: 2 / -1;
+      }
+
+      @media (min-width: 1680px) {
+        font-size: rem(18);
       }
 
       &-color {
@@ -131,6 +142,11 @@
     overflow: hidden;
     padding: rem(40);
     background-color: currentColor;
+    min-height: rem(270);
+
+    @media (min-width: 768px) {
+      min-height: rem(336);
+    }
 
     @include pseudo-cell(before) {
       top: 50%;

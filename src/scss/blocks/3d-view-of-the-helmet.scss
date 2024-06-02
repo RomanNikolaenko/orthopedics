@@ -1,0 +1,265 @@
+.view-of-the-helmet {
+  position: relative;
+  z-index: 1;
+
+  @include pseudo-cell(before) {
+    top: 30%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    filter: blur(309.1666564941406px);
+    background: linear-gradient(135deg, #fff9f7 0%, #efcbb8 56.13%);
+  }
+
+  &__header {
+    display: grid;
+    gap: rem(20);
+
+    @media (min-width: 768px) {
+      grid-template-columns: max-content 1fr;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      padding-right: rem(140);
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(12) rem(20);
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 1fr rem(440) 1fr;
+      gap: rem(20);
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: 1fr rem(480) 1fr;
+    }
+
+    @media (min-width: 1680px) {
+      grid-template-columns: 1fr rem(622) 1fr;
+    }
+  }
+
+  &__colors {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    gap: rem(22);
+
+    @media (min-width: 1200px) {
+      gap: rem(28);
+      margin-bottom: rem(40);
+    }
+
+    @media (min-width: 1440px) {
+      gap: rem(30);
+    }
+
+    @media (min-width: 1680px) {
+      gap: rem(34);
+    }
+  }
+
+  &__colors1 {
+    justify-content: flex-end;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      padding-left: rem(32);
+    }
+  }
+
+  &__colors2 {
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+      padding-right: rem(32);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    color: var(--text-dark);
+    font-family: var(--font-second);
+    font-size: rem(0);
+    transition: all var(--bs-transition);
+
+    @media (min-width: 768px) {
+      gap: rem(30);
+      font-size: rem(14);
+    }
+
+    @media (min-width: 1680px) {
+      gap: rem(40);
+      font-size: rem(16);
+    }
+
+    @include pseudo-cell(before, initial) {
+      width: rem(25);
+      height: rem(25);
+      border-radius: 50%;
+      background-color: var(--color);
+      outline: 1px solid transparent;
+      outline-offset: rem(8);
+      transition: inherit;
+
+      @media (min-width: 768px) {
+        width: rem(34);
+        height: rem(34);
+        outline-offset: rem(10);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(64);
+        height: rem(64);
+        outline-offset: rem(16);
+      }
+
+      @media (min-width: 1440px) {
+        width: rem(70);
+        height: rem(70);
+        outline-offset: rem(20);
+      }
+
+      @media (min-width: 1920px) {
+        width: rem(90);
+        height: rem(90);
+        outline-offset: rem(25);
+      }
+    }
+
+    @include interactive {
+      &::before {
+        opacity: 0.6;
+      }
+    }
+
+    @include any-hover {
+      &::before {
+        opacity: 0.8;
+      }
+    }
+
+    &_active {
+      &::before {
+        outline-color: var(--color);
+      }
+    }
+
+    &_border {
+      &::before {
+        border: 1px solid var(--text-title);
+      }
+    }
+  }
+
+  &__helmet {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 1/1.07;
+    background-color: transparent;
+
+    @media (max-width: 1199.98px) {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      max-width: max-content;
+      margin: 0 auto;
+    }
+
+    @include pseudo-cell(before) {
+      top: 50%;
+      left: 50%;
+      z-index: -2;
+      transform: translate(-50%, -50%) scale(1.4);
+      width: 100%;
+      height: 100%;
+      background-image: url('../../images/svg/bg.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+
+      @media (min-width: 768px) {
+        transform: translate(-50%, -50%) scale(1.55);
+      }
+    }
+
+    @include pseudo-cell(after) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(28);
+      height: rem(28);
+      background-image: url('../../images/svg/play.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      backdrop-filter: blur(6px);
+      border-radius: 50%;
+      transition: filter var(--bs-transition);
+
+      @media (min-width: 768px) {
+        width: rem(42);
+        height: rem(42);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(56);
+        height: rem(56);
+      }
+    }
+
+    @include interactive {
+      &::after {
+        filter: grayscale(0.5);
+      }
+    }
+
+    @include any-hover {
+      &::after {
+        filter: grayscale(0.7);
+      }
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+
+  &__btns {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: rem(20);
+    grid-column: 1/-1;
+    margin-top: rem(24);
+
+    > * {
+      max-width: rem(380);
+    }
+  }
+}

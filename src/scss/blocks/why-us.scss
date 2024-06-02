@@ -1,31 +1,36 @@
 .why-us {
   position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: rem(500);
-  box-shadow: 0px 0px 14px 0px #b4aea714;
-  padding: rem(34) rem(20);
-  border-radius: rem(30);
+  z-index: 2;
 
-  @media (min-width: 768px) {
-    padding: rem(60) rem(30);
-  }
+  &__wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 14px 0px #b4aea714;
+    padding: rem(20) rem(12);
+    border-radius: rem(30);
 
-  @include pseudo-cell(before) {
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background-image: linear-gradient(
-        0deg,
-        rgba(98, 84, 70, 0.4),
-        rgba(98, 84, 70, 0.4)
-      ),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    @media (min-width: 768px) {
+      min-height: rem(500);
+      padding: rem(60) rem(30);
+    }
+
+    @include pseudo-cell(before) {
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background-image: linear-gradient(
+          0deg,
+          rgba(98, 84, 70, 0.4),
+          rgba(98, 84, 70, 0.4)
+        ),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    }
   }
 
   &__bg {
@@ -36,7 +41,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: right center;
     border-radius: inherit;
   }
 
@@ -51,7 +56,6 @@
 
   &__section {
     color: #fff;
-    max-width: rem(140);
   }
 
   &__title {
@@ -80,30 +84,32 @@
   &__card {
     display: grid;
     align-items: center;
+    grid-template-columns: rem(44) 1fr;
     gap: rem(10);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 13px;
-    backdrop-filter: blur(18px);
-    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: rem(13);
+    backdrop-filter: blur(rem(18));
+
     color: #ffffff;
-    padding: rem(16);
+    padding: rem(16) rem(12);
     font-size: rem(20);
     line-height: 120%;
-
-    @media (min-width: 380px) {
-      grid-template-columns: rem(32) 1fr;
-    }
+    background-color: #ffffff;
+    border: 1px solid rgba(234, 133, 41, 0.2);
 
     @media (min-width: 768px) {
       padding: rem(20) rem(24);
-    }
-
-    @media (min-width: 1680px) {
-      grid-template-columns: rem(45) 1fr;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.35);
     }
 
     &-title {
-      font-size: rem(17);
+      font-size: rem(16);
+      color: var(--text-title);
+
+      @media (min-width: 768px) {
+        color: #ffffff;
+      }
 
       @media (min-width: 1680px) {
         font-size: rem(18);
@@ -112,16 +118,15 @@
 
     &-img {
       display: block;
-      max-width: rem(32);
-      max-height: rem(32);
       width: 100%;
       height: 100%;
       object-fit: contain;
       object-position: center center;
+      color: var(--primary-500);
 
-      @media (min-width: 1680px) {
-        max-width: rem(45);
-        max-height: rem(45);
+      @media (min-width: 768px) {
+        opacity: 0.5;
+        color: #ffffff;
       }
     }
   }

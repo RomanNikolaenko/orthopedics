@@ -1,4 +1,6 @@
 .two-buttons {
+  position: relative;
+  z-index: 2;
   display: grid;
   gap: rem(20);
   margin-top: rem(20);

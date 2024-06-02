@@ -1,4 +1,7 @@
 .frequently-asked-questions {
+  position: relative;
+  z-index: 2;
+
   &__inner {
     display: grid;
     gap: rem(25);
@@ -67,9 +70,8 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto;
   margin-top: rem(20);
-  margin-bottom: rem(-32);
 
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     margin-bottom: rem(-60);
   }
 

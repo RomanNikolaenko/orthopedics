@@ -320,8 +320,7 @@
 }
 
 .title {
-  text-align: right;
-  font-size: rem(24);
+  font-size: rem(20);
   line-height: 1.13;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -332,6 +331,7 @@
 
   @media (min-width: 768px) {
     font-size: rem(28);
+    text-align: right;
   }
 
   @media (min-width: 1200px) {
@@ -345,28 +345,27 @@
   }
 
   &__border {
-    display: inline-block;
-    text-align: center;
-    border: 2px solid rgba(234, 133, 41, 0.5);
-    line-height: 1;
-    border-radius: 100vmax;
-    padding: rem(0) rem(10);
+    @media (min-width: 768px) {
+      display: inline-block;
+      text-align: center;
+      border: 2px solid rgba(234, 133, 41, 0.5);
+      line-height: 1;
+      border-radius: 100vmax;
+      padding: rem(0) rem(10);
+    }
   }
 
   &__color {
     color: var(--primary-500);
   }
 
-  br {
-    display: block;
-    height: 0;
-    width: 0;
-  }
-
   i {
-    display: inline-block;
     font-style: normal;
-    text-align: left;
+
+    @media (min-width: 768px) {
+      display: block;
+      text-align: left;
+    }
   }
 }
 
@@ -377,6 +376,11 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
   font-family: var(--font-second);
+  width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: rem(140);
+  }
 
   @include pseudo-cell(before, initial) {
     content: counter(main-blocks, decimal-leading-zero);

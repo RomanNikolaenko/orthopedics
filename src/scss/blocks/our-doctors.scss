@@ -1,4 +1,7 @@
 .our-doctors {
+  position: relative;
+  z-index: 2;
+
   &__header {
     display: grid;
     gap: rem(20);
@@ -6,10 +9,6 @@
     @media (min-width: 768px) {
       grid-template-columns: max-content 1fr;
     }
-  }
-
-  &__section {
-    max-width: rem(140);
   }
 
   &__swiper {
@@ -117,7 +116,7 @@
     display: flex;
     flex-direction: column;
     gap: rem(20);
-    padding: rem(20);
+    padding: rem(24) rem(10);
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -169,7 +168,7 @@
   &__wrap {
     display: flex;
     align-items: center;
-    padding: rem(20);
+    padding: rem(10);
 
     @media (min-width: 768px) {
       padding: rem(30);

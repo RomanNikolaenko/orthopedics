@@ -11,7 +11,15 @@ $maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина кон�
   --bs-line-height: 1.3; // Базовая высота шрифта
   --bs-font-color: var(--text-dark); // Цвет шрифта по умолчанию
   --bs-transition: 0.3s ease-in-out;
-  --bs-mainOffset: 20px;
+  --bs-mainOffset: 15px;
+
+  @media (min-width: 768px) {
+    --bs-mainOffset: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    --bs-mainOffset: 20px;
+  }
 
   @media (min-width: 1640px) {
     --bs-mainOffset: 30px;

@@ -54,8 +54,24 @@ new Menus().init();
 // });
 
 new Accordion('.frequently-asked-questions__accordion', {
-    shouldOpenAll: true, // true
-    defaultOpen: [], // [0,1]
-    defaultOpenAll: false,
-    collapsedClass: 'open',
-  });
+  shouldOpenAll: true, // true
+  defaultOpen: [], // [0,1]
+  defaultOpenAll: false,
+  collapsedClass: 'open',
+});
+
+const viewOfTheHelmet = document.querySelector('.view-of-the-helmet__helmet');
+const viewOfTheHelmetBtn = document.querySelectorAll('.view-of-the-helmet__btn');
+
+if (viewOfTheHelmet && viewOfTheHelmetBtn.length) {
+  viewOfTheHelmetBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewOfTheHelmetBtn.forEach(item => {
+        item.classList.remove('view-of-the-helmet__btn_active');
+      });
+
+      viewOfTheHelmet.querySelector('img').setAttribute('src', btn.getAttribute('data-img'));
+      btn.classList.add('view-of-the-helmet__btn_active');
+    })
+  })
+}

@@ -1,4 +1,7 @@
 .about-company {
+  position: relative;
+  z-index: 2;
+
   &__header {
     display: grid;
     gap: rem(20);
@@ -6,10 +9,6 @@
     @media (min-width: 768px) {
       grid-template-columns: max-content 1fr;
     }
-  }
-
-  &__section {
-    max-width: rem(140);
   }
 
   &__list {

@@ -26,7 +26,7 @@
 
   &__title {
     width: 100%;
-    text-align: center;
+    text-align: center !important;
 
     @media (min-width: 768px) {
       padding-right: rem(140);
@@ -112,8 +112,8 @@
     }
 
     @include pseudo-cell(before, initial) {
-      width: rem(25);
-      height: rem(25);
+      width: rem(30);
+      height: rem(30);
       border-radius: 50%;
       background-color: var(--color);
       outline: 1px solid transparent;

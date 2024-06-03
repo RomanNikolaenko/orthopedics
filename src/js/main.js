@@ -75,3 +75,15 @@ if (viewOfTheHelmet && viewOfTheHelmetBtn.length) {
     })
   })
 }
+
+document.addEventListener('click', function (e) {
+  const socialsAccordion = document.querySelector('.socials-accordion');
+
+  if (e.target.classList.contains('socials-accordion__btn') && socialsAccordion) {
+    socialsAccordion.classList.toggle('socials-accordion_open');
+  }
+
+  if (!e.target.classList.contains('socials-accordion__btn') && socialsAccordion.classList.contains('socials-accordion_open')) {
+    socialsAccordion.classList.remove('socials-accordion_open');
+  }
+});

@@ -3,6 +3,14 @@
   align-items: center;
   gap: rem(16);
 
+  &__item {
+    &_active {
+      @media (max-width: 1199.98px) {
+        display: none;
+      }
+    }
+  }
+
   &__link {
     font-family: var(--font-second);
     font-size: rem(15);
@@ -18,7 +26,7 @@
       color: var(--primary-400);
     }
 
-    &_active {
+    .lang__item_active & {
       opacity: 0.5;
       pointer-events: none;
     }

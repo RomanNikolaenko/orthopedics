@@ -1,0 +1,110 @@
+.socials-accordion {
+  display: none;
+
+  @media (min-width: 1200px) {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+  }
+
+  &__btn {
+    background-color: #5d5955;
+    mask-image: url('../../images/svg/arrow-slider.svg');
+    mask-repeat: no-repeat;
+    mask-size: 60% 60%;
+    mask-position: center center;
+    transform: rotate(-90deg);
+    width: rem(24);
+    height: rem(24);
+    transition: background-color var(--bs-transition);
+
+    @include interactive {
+      background-color: var(--primary-300);
+    }
+
+    @include any-hover {
+      background-color: var(--primary-400);
+    }
+
+    @media (min-width: 1440px) {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    top: calc(100% + rem(20));
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(10);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--bs-transition);
+
+    @media (min-width: 1440px) {
+      position: initial;
+      flex-direction: row;
+      gap: rem(20);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    .socials-accordion_open & {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      top: calc(100% + rem(10));
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(10);
+    border-radius: 50%;
+    width: rem(36);
+    height: rem(36);
+    box-shadow: 0 0 11px 0 rgba(31, 33, 29, 0.08);
+    background-color: var(--surface-white);
+    color: var(--neutral-20);
+    transition: color var(--bs-transition),
+      background-color var(--bs-transition);
+
+    @media (min-width: 1440px) {
+      width: rem(40);
+      height: rem(40);
+    }
+
+    @media (min-width: 1680px) {
+      width: rem(44);
+      height: rem(44);
+    }
+
+    @include interactive {
+      color: var(--primary-300);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

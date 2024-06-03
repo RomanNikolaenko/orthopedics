@@ -15,15 +15,17 @@
     </button>
 
     @@include('./components/lang.html', { "class": "header__lang" })
-    @@include('./components/socials.html', {
+
+    @@include('./components/socials-accordion.html', {
     "class": "header__socials",
     "fb": true,
     "inst": true,
     "youtube": true,
     "tg": true,
     })
+
     @@include('./ui/button.html',
-    { "title": "Зв'язатися", "class": "button-56 button-white header__connect",
+    { "title": "Зв'язатися", "class": "button-white header__connect",
     "dataType": "", "svg": false, })
 
     <button

@@ -1,13 +1,31 @@
-.two-buttons {
+.two-buttons2 {
   position: relative;
   z-index: 2;
   display: grid;
+  align-items: flex-end;
   gap: rem(20);
-  margin-top: rem(20);
+  margin-top: rem(24);
 
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: rem(32);
+    grid-template-columns: repeat(2, rem(290));
+    margin-top: rem(42);
+    justify-content: center;
+  }
+
+  .what-a-helmet-can-do & {
+    @include pseudo-cell(before) {
+      display: none;
+      left: 50%;
+      bottom: calc(100% + rem(8));
+      width: 1px;
+      height: rem(42);
+      background-image: url('../../images/what-a-helmet-can-do/line2.svg');
+      pointer-events: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+      }
+    }
   }
 
   &__wrap {
@@ -15,7 +33,7 @@
     align-items: center;
     gap: rem(20);
 
-    @media (min-width: 576px) {
+    @media (min-width: 576px) and (max-width: 1199.98px) {
       grid-template-columns: minmax(rem(165), 1fr) repeat(2, 1fr);
       border: 2px solid var(--primary-500);
       border-radius: 100vmax;
@@ -29,7 +47,7 @@
     text-wrap: balance;
     text-align: center;
     font-family: var(--font-second);
-    font-size: rem(15);
+    font-size: rem(12);
     line-height: 100%;
     color: var(--text-dark);
   }
@@ -60,6 +78,14 @@
       font-size: rem(23);
     }
 
+    @media (min-width: 1200px) {
+      border: 2px solid var(--primary-500);
+      border-radius: 100vmax;
+      background: var(--surface-white);
+      box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
+      padding: rem(10) rem(30);
+    }
+
     @include interactive {
       color: var(--primary-300);
     }
@@ -78,5 +104,9 @@
       mask-repeat: no-repeat;
       mask-position: center center;
     }
+  }
+
+  .button-arrow {
+    font-size: rem(16);
   }
 }

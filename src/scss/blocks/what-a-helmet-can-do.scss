@@ -1,0 +1,494 @@
+.what-a-helmet-can-do {
+  --gap: 15px;
+  position: relative;
+  z-index: 3;
+
+  @media (min-width: 1200px) {
+    --gap: 18px;
+  }
+
+  @media (min-width: 1440px) {
+    --gap: 22px;
+  }
+
+  @media (min-width: 1680px) {
+    --gap: 30px;
+  }
+
+  &__header {
+    display: grid;
+    gap: rem(20);
+
+    @media (min-width: 768px) {
+      grid-template-columns: max-content 1fr;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-inline: auto;
+
+    @media (min-width: 768px) {
+      padding-right: rem(140);
+      text-align: center !important;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: rem(720);
+    }
+
+    @media (min-width: 1440px) {
+      max-width: rem(780);
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    gap: rem(10);
+
+    @media (min-width: 768px) {
+      grid-template-columns: calc(50% - rem(5)) calc(50% - rem(5));
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 1fr 1.12fr 1fr;
+    }
+
+    @media (min-width: 1680px) {
+      grid-template-columns: 1fr 1.2fr 1fr;
+    }
+
+    @media (min-width: 1680px) {
+      grid-template-columns: 1fr 1.29fr 1fr;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 2;
+    padding: calc(var(--gap) * 2);
+    border-radius: 50%;
+    background-color: var(--bg);
+    order: 3;
+    width: 100%;
+    max-width: rem(360);
+    margin: rem(6) auto 0;
+    aspect-ratio: 1/1;
+
+    @media (min-width: 768px) {
+      max-width: initial;
+    }
+
+    @media (min-width: 1200px) {
+      order: initial;
+      margin: 0;
+    }
+
+    @include pseudo-cell(before) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../images/what-a-helmet-can-do/ellipse.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    @include pseudo-cell(after) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - calc(var(--gap) * 2));
+      height: calc(100% - calc(var(--gap) * 2));
+      background-image: url('../../images/what-a-helmet-can-do/ellipse.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: inherit;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      grid-column: 1/-1;
+    }
+
+    @media (min-width: 1200px) {
+      flex-direction: column;
+      grid-column: initial;
+      padding-block: rem(30);
+    }
+
+    @media (min-width: 1440px) {
+      padding-block: rem(40);
+    }
+
+    @media (min-width: 1680px) {
+      padding-block: rem(50);
+    }
+
+    &_left {
+      @media (min-width: 1200px) {
+        align-items: flex-end;
+      }
+    }
+
+    &_right {
+      @media (min-width: 1200px) {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      max-width: rem(370);
+    }
+
+    @media (min-width: 1200px) {
+      max-width: rem(280);
+
+      .what-a-helmet-can-do__column_left & {
+        &:nth-of-type(2) {
+          align-self: flex-start;
+        }
+      }
+
+      .what-a-helmet-can-do__column_right & {
+        &:nth-of-type(2) {
+          align-self: flex-end;
+        }
+      }
+    }
+
+    @media (min-width: 1440px) {
+      max-width: rem(340);
+    }
+
+    @media (min-width: 1680px) {
+      max-width: rem(370);
+    }
+
+    .what-a-helmet-can-do__column_left & {
+      &:nth-of-type(1) {
+        .what-a-helmet-can-do__btn::after {
+          transform: rotate(33deg);
+        }
+      }
+
+      &:nth-of-type(2) {
+        .what-a-helmet-can-do__popup {
+          left: 100%;
+        }
+      }
+
+      &:nth-of-type(3) {
+        .what-a-helmet-can-do__btn::after {
+          transform: rotate(-33deg);
+        }
+      }
+    }
+
+    .what-a-helmet-can-do__column_right & {
+      &:nth-of-type(1) {
+        .what-a-helmet-can-do__btn::after {
+          transform: rotate(-33deg);
+        }
+      }
+
+      &:nth-of-type(2) {
+        .what-a-helmet-can-do__popup {
+          left: 0;
+        }
+      }
+
+      &:nth-of-type(3) {
+        .what-a-helmet-can-do__btn::after {
+          transform: rotate(33deg);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    --width: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--gap) / 2);
+    border-radius: rem(35);
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 0 rgba(21, 21, 19, 0.07);
+    background: var(--surface-white);
+    font-size: rem(13);
+    line-height: 0.85;
+    text-align: center;
+    text-transform: uppercase;
+    padding: rem(11) var(--gap);
+    background-color: #ffffff;
+    transition: all var(--bs-transition);
+
+    @media (min-width: 768px) {
+      font-size: rem(15);
+      white-space: nowrap;
+      padding: rem(13) var(--gap);
+
+      .what-a-helmet-can-do__column_left & {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      font-size: rem(16);
+      --width: 10px;
+      white-space: initial;
+      padding: rem(15) var(--gap);
+    }
+
+    @media (min-width: 1440px) {
+      font-size: rem(17);
+      --width: 12px;
+      padding: rem(18) var(--gap);
+    }
+
+    @media (min-width: 1680px) {
+      font-size: rem(20);
+      --width: 16px;
+      padding: rem(24) var(--gap);
+    }
+
+    @include pseudo-cell(before, initial) {
+      flex: 0 0 auto;
+      width: var(--width);
+      height: var(--width);
+      border-radius: 50%;
+      box-shadow: 0 0 10px 0 rgba(21, 21, 19, 0.07);
+      background: var(--primary-500);
+      transition: inherit;
+    }
+
+    @include pseudo-cell(after) {
+      display: none;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background-image: url('../../images/what-a-helmet-can-do/line.svg');
+      pointer-events: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+      }
+
+      .what-a-helmet-can-do__column_left & {
+        left: calc(100% + rem(4));
+        transform-origin: left;
+      }
+
+      .what-a-helmet-can-do__column_right & {
+        right: calc(100% + rem(4));
+        transform-origin: right;
+      }
+    }
+
+    &_active {
+      color: #ffffff;
+      background-color: var(--primary-500);
+
+      &::before {
+        background-color: #ffffff;
+      }
+    }
+
+    @include interactive {
+      color: #ffffff;
+      background-color: var(--primary-300);
+
+      &::before {
+        background-color: #ffffff;
+      }
+    }
+
+    @include any-hover {
+      color: #ffffff;
+      background-color: var(--primary-400);
+
+      &::before {
+        background-color: #ffffff;
+      }
+    }
+
+    span {
+      width: 100%;
+      text-align: center;
+
+      @media (max-width: 767.98px) {
+        padding-right: var(--gap);
+      }
+    }
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__popups {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    align-items: center;
+    order: 4;
+
+    @media (max-width: 767.98px) {
+      margin-top: rem(-100);
+    }
+  }
+}
+
+.popup-helmet {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all var(--bs-transition);
+
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    max-height: rem(250);
+    height: 100%;
+  }
+
+  @media (max-width: 767.98px) {
+    height: 0;
+  }
+
+  @media (max-width: 1199.98px) {
+    width: 100%;
+
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  @media (min-width: 1200px) {
+    position: absolute;
+    top: calc(100% + rem(12));
+    left: 50%;
+    z-index: 6;
+    transform: translateX(-50%);
+    width: 160%;
+    padding: rem(20);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
+    backdrop-filter: blur(18px);
+    border-radius: rem(20);
+  }
+
+  @media (min-width: 1440px) {
+    padding: rem(30);
+    gap: rem(28);
+  }
+
+  @media (min-width: 1680px) {
+    width: 170%;
+    padding: rem(40);
+    gap: rem(46);
+  }
+
+  @media (min-width: 1920px) {
+    width: 200%;
+  }
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    @media (max-width: 767.98px) {
+      height: rem(210);
+    }
+  }
+
+  &__close {
+    display: none;
+    box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
+    background: var(--surface-white);
+    border-radius: 50%;
+    padding: rem(10);
+    width: rem(44);
+    height: rem(44);
+    align-self: flex-end;
+    transition: color var(--bs-transition);
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
+
+    @include interactive {
+      color: var(--primary-300);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__inner {
+    height: 100%;
+
+    @media (min-width: 1200px) {
+      height: calc(100% - rem(38) * 2);
+    }
+  }
+
+  &__wrap {
+    padding: rem(20);
+    background-color: #ffffff;
+
+    &-title {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--text-title);
+    }
+
+    &-text {
+      font-family: var(--font-second);
+      font-size: rem(14);
+      color: var(--text-light);
+    }
+  }
+
+  &__desc {
+    display: grid;
+    align-content: flex-start;
+    gap: rem(8);
+    overflow: overlay;
+    max-height: 100%;
+
+    @media (min-width: 1200px) {
+      max-height: rem(220);
+    }
+  }
+}

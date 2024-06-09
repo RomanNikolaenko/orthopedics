@@ -45,7 +45,9 @@
 * Подключение стилей отдельных блоков и секций
 */
 @import 'blocks/header';
+@import 'blocks/hero1';
 @import 'components/lang';
+@import 'components/tooltip';
 @import 'components/menus';
 @import 'components/socials';
 @import 'components/socials-accordion';

@@ -1,3 +1,4 @@
-<svg width="2" height="18" viewBox="0 0 2 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line opacity="0.75" x1="0.900165" y1="0.332031" x2="0.900165" y2="17.4913" stroke="#62500F" stroke-width="0.612829" stroke-dasharray="3.68 3.68"/>
+<svg width="2" height="18" viewBox="0 0 2 18" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <line opacity="0.75" x1="0.900165" y1="0.332031" x2="0.900165" y2="17.4913" stroke="#62500F" stroke-width="1" stroke-dasharray="7 7"/>
 </svg>

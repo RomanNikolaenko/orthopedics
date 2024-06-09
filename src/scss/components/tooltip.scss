@@ -1,0 +1,144 @@
+.tooltip {
+  position: absolute;
+  z-index: 2;
+
+  &__btn {
+    --color: #b4aea7;
+
+    position: relative;
+    width: rem(22);
+    height: rem(22);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.21);
+    transition: all var(--bs-transition);
+
+    @media (min-width: 768px) {
+      width: rem(28);
+      height: rem(28);
+    }
+
+    @media (min-width: 1200px) {
+      width: rem(43);
+      height: rem(43);
+    }
+
+    @media (min-width: 1680px) {
+      width: rem(56);
+      height: rem(56);
+    }
+
+    @include interactive {
+      --color: #f2b67f;
+    }
+
+    @include any-hover {
+      --color: #ee9d54;
+    }
+
+    @include pseudo-cell(before) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(8);
+      height: rem(1.2);
+      border-radius: rem(4);
+      background-color: var(--color);
+      transition: inherit;
+
+      @media (min-width: 768px) {
+        width: rem(10);
+        height: rem(1.5);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(15);
+        height: rem(3);
+      }
+
+      @media (min-width: 1680px) {
+        width: rem(19);
+        height: rem(3);
+      }
+    }
+
+    @include pseudo-cell(after) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      width: rem(8);
+      height: rem(1.2);
+      border-radius: rem(4);
+      background-color: var(--color);
+      transition: inherit;
+
+      @media (min-width: 768px) {
+        width: rem(10);
+        height: rem(1.5);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(15);
+        height: rem(3);
+      }
+
+      @media (min-width: 1680px) {
+        width: rem(19);
+        height: rem(3);
+      }
+
+      .tooltip_open & {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    z-index: -1;
+    bottom: calc(100% - rem(20));
+    right: calc(100% - rem(20));
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: rem(16);
+    padding: rem(14);
+    font-size: rem(15);
+    width: rem(200);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--bs-transition);
+
+    @media (min-width: 1200px) {
+      padding: rem(16) rem(20);
+      width: rem(230);
+    }
+
+    .tooltip_open & {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: rem(14);
+
+    @media (min-width: 1200px) {
+      font-size: rem(15);
+    }
+
+    span {
+      color: #b4aea7;
+    }
+  }
+}

@@ -150,4 +150,28 @@ document.addEventListener('click', function (e) {
       item.classList.remove('popup-helmet_active');
     });
   }
+
+  if (e.target.closest('.tooltip__btn')) {
+    const parent = e.target.parentNode;
+
+    if(parent.getAttribute('data-collapse') == 'false') {
+      const tooltips = document.querySelectorAll('[data-collapse]');
+    
+      tooltips.forEach(tooltip => {
+        tooltip.classList.remove('tooltip_open');
+        tooltip.setAttribute('data-collapse', false);
+      })
+    }
+    parent.classList.toggle('tooltip_open');
+    parent.setAttribute('data-collapse', parent.classList.contains('tooltip_open') ? true : false);
+  }
+
+  if (!e.target.closest('.tooltip')) {
+    const tooltips = document.querySelectorAll('.tooltip');
+    
+    tooltips.forEach(tooltip => {
+      tooltip.classList.remove('tooltip_open');
+      tooltip.setAttribute('data-collapse', false);
+    })
+  }
 });

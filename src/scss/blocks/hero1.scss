@@ -3,6 +3,20 @@
   z-index: 4;
   @include property('padding-top', 60, 40);
 
+  @include pseudo-cell(before) {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(1.8);
+    width: 100%;
+    max-width: rem(408);
+    aspect-ratio: 1 / 1;
+    background-image: url('../../images/svg/ellipse2.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
   &__inner {
     position: relative;
     max-width: rem(1680);
@@ -53,6 +67,7 @@
 
   &__slide-3d {
     position: absolute;
+    z-index: -1;
     left: 100%;
     top: 0;
     transform: translate(-100%, rem(-110)) rotate(-27deg);
@@ -71,8 +86,13 @@
     box-shadow: 0 0 26px 0 rgba(25, 48, 56, 0.07);
 
     @media (min-width: 768px) {
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-27deg);
+      left: 47%;
+      transform: translate(-50%, -30%) rotate(-27deg);
+    }
+
+    @media (min-width: 1200px) {
+      left: 45%;
+      transform: translate(-50%, -20%) rotate(-27deg);
     }
 
     span {
@@ -157,6 +177,7 @@
   &__img {
     width: 100%;
     height: 100%;
+    mix-blend-mode: darken;
     object-fit: contain;
     object-position: center center;
   }
@@ -174,6 +195,19 @@
 
     .button-arrow {
       @include property('min-height', 56, 42);
+
+      @include pseudo-cell(before) {
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%) scale(1.8);
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-image: url('../../images/svg/ellipse2.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
 
       @media (min-width: 768px) and (max-width: 1439.98px) {
         max-width: rem(310);
@@ -233,7 +267,6 @@
     gap: rem(20);
 
     @media (min-width: 768px) {
-      margin-top: rem(25);
       padding-top: rem(25);
       border-top: 1px solid rgba(98, 80, 15, 0.2);
     }
@@ -281,6 +314,147 @@
 
   &__tooltip {
     position: absolute;
+    z-index: 2;
+
+    &-btn {
+      --color: #b4aea7;
+
+      position: relative;
+      width: rem(22);
+      height: rem(22);
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.21);
+      transition: all var(--bs-transition);
+
+      @media (min-width: 768px) {
+        width: rem(28);
+        height: rem(28);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(43);
+        height: rem(43);
+      }
+
+      @media (min-width: 1680px) {
+        width: rem(56);
+        height: rem(56);
+      }
+
+      @include interactive {
+        --color: #f2b67f;
+      }
+
+      @include any-hover {
+        --color: #ee9d54;
+      }
+
+      @include pseudo-cell(before) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(8);
+        height: rem(1.2);
+        border-radius: rem(4);
+        background-color: var(--color);
+        transition: inherit;
+
+        @media (min-width: 768px) {
+          width: rem(10);
+          height: rem(1.5);
+        }
+
+        @media (min-width: 1200px) {
+          width: rem(15);
+          height: rem(3);
+        }
+
+        @media (min-width: 1680px) {
+          width: rem(19);
+          height: rem(3);
+        }
+      }
+
+      @include pseudo-cell(after) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+        width: rem(8);
+        height: rem(1.2);
+        border-radius: rem(4);
+        background-color: var(--color);
+        transition: inherit;
+
+        @media (min-width: 768px) {
+          width: rem(10);
+          height: rem(1.5);
+        }
+
+        @media (min-width: 1200px) {
+          width: rem(15);
+          height: rem(3);
+        }
+
+        @media (min-width: 1680px) {
+          width: rem(19);
+          height: rem(3);
+        }
+
+        .tooltip_open & {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+    }
+
+    &-wrap {
+      position: absolute;
+      z-index: -1;
+      bottom: calc(100% - rem(20));
+      right: calc(100% - rem(20));
+      display: flex;
+      flex-direction: column;
+      gap: rem(6);
+
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: rem(16);
+      padding: rem(14);
+      font-size: rem(15);
+      width: rem(200);
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--bs-transition);
+
+      @media (min-width: 1200px) {
+        padding: rem(16) rem(20);
+        width: rem(230);
+      }
+
+      .tooltip_open & {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    &-text {
+      font-size: rem(14);
+
+      @media (min-width: 1200px) {
+        font-size: rem(15);
+      }
+
+      span {
+        color: #b4aea7;
+      }
+    }
 
     &:nth-of-type(1) {
       top: 12%;
@@ -335,14 +509,6 @@
       transition: inherit;
     }
 
-    &-active {
-      color: var(--primary-500);
-
-      &::before {
-        opacity: 1;
-      }
-    }
-
     &:not(:last-of-type) {
       span {
         position: relative;
@@ -363,8 +529,11 @@
       margin: 0 auto rem(4);
       width: 100%;
       height: rem(42);
+      mix-blend-mode: darken;
       object-fit: contain;
       object-position: center center;
+      opacity: 0;
+      transition: opacity 1s linear;
 
       @media (min-width: 1440px) {
         height: rem(59);
@@ -372,6 +541,15 @@
 
       @media (min-width: 1680px) {
         height: rem(70);
+      }
+    }
+
+    &-active {
+      color: var(--primary-500);
+
+      &::before,
+      img {
+        opacity: 1;
       }
     }
   }

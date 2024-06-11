@@ -5,12 +5,12 @@
     }
 
     &::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.3);
+      background-color: var(--primary-200);
       border-radius: rem(11);
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--primary-200);
+      background-color: var(--primary-500);
       border-radius: rem(11);
     }
   }

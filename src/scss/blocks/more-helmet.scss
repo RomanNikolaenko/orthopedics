@@ -226,6 +226,42 @@
     @media (min-width: 1640px) {
       padding: rem(18) rem(35);
     }
+
+    .button-line {
+      transition: all var(--bs-transition);
+
+      @include interactive {
+        color: var(--primary-400);
+
+        span {
+          color: var(--primary-400);
+
+          &:after {
+            color: var(--primary-400);
+          }
+        }
+
+        &:after {
+          color: var(--primary-400);
+        }
+      }
+
+      @include any-hover {
+        color: var(--primary-500);
+
+        span {
+          color: var(--primary-500);
+
+          &:after {
+            color: var(--primary-500);
+          }
+        }
+
+        &:after {
+          color: var(--primary-500);
+        }
+      }
+    }
   }
 }
 

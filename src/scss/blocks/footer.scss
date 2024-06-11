@@ -76,6 +76,10 @@
         color: var(--primary-500);
       }
     }
+
+    span {
+      text-transform: uppercase;
+    }
   }
 
   &__networks {
@@ -137,7 +141,6 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      gap: rem(16);
       color: rgba(93, 89, 85, 0.65);
       background-color: var(--surface-bg);
       padding: rem(30) rem(24);
@@ -147,9 +150,21 @@
       }
     }
 
+    &-column {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(16);
+    }
+
     &-inner {
       display: flex;
       flex-direction: column;
+
+      .uppercase {
+        text-transform: uppercase;
+      }
     }
   }
 

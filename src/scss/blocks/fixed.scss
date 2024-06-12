@@ -5,11 +5,164 @@
   z-index: 20;
   display: flex;
   flex-direction: column;
-  gap: rem(30);
-  display: none;
+  gap: rem(20);
 
-  .tooltip {
+  @media (min-width: 1440px) {
+    gap: rem(30);
+  }
+
+  &__tooltip {
     position: relative;
-    display: flex;
+    z-index: 2;
+    color: var(--primary-500);
+
+    &.tooltip_open {
+      z-index: 4;
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(38);
+      height: rem(38);
+      padding: rem(9);
+      box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
+      background-color: rgba(255, 255, 255, 0.8);
+      color: var(--primary-500);
+      border: 1px solid currentColor;
+      border-radius: 50%;
+
+      @media (min-width: 768px) {
+        width: rem(42);
+        height: rem(42);
+      }
+
+      @media (min-width: 1200px) {
+        width: rem(46);
+        height: rem(46);
+        padding: rem(10);
+      }
+
+      @media (min-width: 1680px) {
+        width: rem(56);
+        height: rem(56);
+        padding: rem(13);
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .tooltip_open & {
+        color: var(--blue);
+      }
+
+      .fixed-block__phone &,
+      .fixed-block__message & {
+        transition: all var(--bs-transition);
+
+        @include interactive {
+          color: var(-gray);
+        }
+
+        @include any-hover {
+          color: var(--blue);
+        }
+      }
+    }
+
+    &-wrap {
+      position: absolute;
+      z-index: -1;
+      display: flex;
+      flex-direction: column;
+      gap: rem(6);
+
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all var(--bs-transition);
+
+      .tooltip_open & {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .fixed-block__phone & {
+        bottom: calc(100% - rem(20));
+        right: calc(100% - rem(20));
+        display: flex;
+        flex-direction: column;
+        gap: rem(6);
+
+        border-radius: rem(16);
+        padding: rem(16) rem(20);
+        font-size: rem(18);
+        width: max-content;
+      }
+
+      .fixed-block__message & {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: rem(6);
+
+        border-radius: rem(40);
+        padding: rem(12) rem(6) rem(58);
+        font-size: rem(18);
+      }
+    }
+  }
+
+  &__phone {
+    &-number {
+      transition: color var(--bs-transition);
+
+      @include interactive {
+        color: var(--text-light);
+      }
+
+      @include any-hover {
+        color: var(--text-title);
+      }
+    }
+  }
+
+  &__message {
+    &-socials {
+      display: flex;
+    }
+
+    &-socials-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 0 rgba(180, 174, 167, 0.25);
+      transition: filter var(--bs-transition);
+
+      @include interactive {
+        filter: contrast(0.7);
+      }
+
+      @include any-hover {
+        filter: contrast(0.8);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

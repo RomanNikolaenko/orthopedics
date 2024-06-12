@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transform: translate(-50%, -50%) scale(1.8);
+    transform: translate(-50%, -50%) scale(4);
     width: 100%;
     max-width: rem(408);
     aspect-ratio: 1 / 1;
@@ -15,6 +15,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     pointer-events: none;
+    opacity: 0.5;
   }
 
   &__inner {
@@ -58,6 +59,101 @@
 
     @media (min-width: 1680px) {
       grid-template-columns: 1.12fr 1fr;
+    }
+
+    &[data-swiper-slide-index='1'] {
+      .hero1__slide-3d {
+        background-color: rgba(150, 182, 220, 0.25);
+      }
+
+      .hero1__slide-image {
+        &:before {
+          background: radial-gradient(
+              circle,
+              rgba(41, 147, 221, 0.03) 0%,
+              rgba(41, 147, 221, 0.03) 30%,
+              transparent 30%
+            ),
+            radial-gradient(
+              circle,
+              rgba(37, 139, 213, 0.03) 0%,
+              rgba(37, 139, 213, 0.03) 39%,
+              transparent 39%
+            ),
+            radial-gradient(
+              circle,
+              rgba(48, 151, 225, 0.03) 0%,
+              rgba(48, 151, 225, 0.03) 48%,
+              transparent 48%
+            ),
+            radial-gradient(
+              circle,
+              rgba(36, 138, 219, 0.02) 0%,
+              rgba(36, 138, 219, 0.02) 57%,
+              transparent 57%
+            );
+        }
+      }
+
+      .orange {
+        color: #399df5;
+      }
+
+      .button-orange {
+        background-color: #399df5;
+
+        &:before {
+          background-image: url('../../images/svg/ellipse2-blue.svg');
+        }
+
+        @include interactive {
+          border-color: rgba(57, 157, 245, 0.8);
+        }
+
+        @include any-hover {
+          border-color: #399df5;
+        }
+      }
+
+      .hero1__tooltip-btn {
+        @include interactive {
+          --color: #399df5;
+        }
+
+        @include any-hover {
+          --color: #399df5;
+        }
+      }
+
+      .hero1__tooltip {
+        &:nth-of-type(1) {
+          top: 37%;
+          left: 61%;
+
+          @media (min-width: 480px) {
+            left: 61%;
+          }
+        }
+
+        &:nth-of-type(2) {
+          top: 69%;
+          left: 51%;
+
+          @media (min-width: 480px) {
+            top: 69%;
+            left: 55%;
+          }
+        }
+
+        &:nth-of-type(3) {
+          top: 55%;
+          left: 60%;
+
+          @media (min-width: 480px) {
+            left: 30%;
+          }
+        }
+      }
     }
 
     &.swiper-slide-active {
@@ -161,6 +257,19 @@
       }
     }
 
+    @include pseudo-cell(after) {
+      left: 0;
+      bottom: rem(-20);
+      z-index: -2;
+      transform: translateY(50%);
+      width: 100%;
+      height: rem(108);
+      background-image: url('../../images/hero/shadow.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center center;
+    }
+
     &_wrap {
       position: relative;
       max-width: rem(250);
@@ -200,13 +309,14 @@
         top: 50%;
         left: 50%;
         z-index: -1;
-        transform: translate(-50%, -50%) scale(1.8);
+        transform: translate(-50%, -50%) scale(4);
         width: 100%;
         aspect-ratio: 1 / 1;
         background-image: url('../../images/svg/ellipse2.svg');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         pointer-events: none;
+        opacity: 0.5;
       }
 
       @media (min-width: 768px) and (max-width: 1439.98px) {
@@ -227,7 +337,7 @@
       @include pseudo-cell(before) {
         bottom: 0;
         left: 100%;
-        width: 100%;
+        width: 80%;
         height: 1px;
         transform: rotate(-45deg);
         transform-origin: left;
@@ -315,6 +425,10 @@
   &__tooltip {
     position: absolute;
     z-index: 2;
+
+    &.tooltip_open {
+      z-index: 3;
+    }
 
     &-btn {
       --color: #b4aea7;
@@ -420,9 +534,9 @@
       backdrop-filter: blur(10px);
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: rem(16);
-      padding: rem(14);
-      font-size: rem(15);
-      width: rem(200);
+      padding: rem(10);
+      font-size: rem(13);
+      width: rem(170);
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
@@ -431,6 +545,7 @@
       @media (min-width: 1200px) {
         padding: rem(16) rem(20);
         width: rem(230);
+        font-size: rem(15);
       }
 
       .tooltip_open & {
@@ -476,11 +591,11 @@
     }
 
     &:nth-of-type(3) {
-      top: 70%;
+      top: 64%;
       left: 70%;
 
       @media (min-width: 480px) {
-        left: 60%;
+        left: 52%;
       }
     }
   }
@@ -495,7 +610,8 @@
     border: none;
     width: auto;
     height: auto;
-    transition: all 1s linear;
+    color: #5d5955;
+    transition: all 0.5s linear;
 
     @include pseudo-cell(before) {
       top: 100%;
@@ -503,7 +619,7 @@
       transform: translate(-50%, 50%);
       width: rem(12);
       height: rem(12);
-      background-color: var(--primary-500);
+      background-color: currentColor;
       border-radius: 50%;
       opacity: 0;
       transition: inherit;
@@ -533,7 +649,7 @@
       object-fit: contain;
       object-position: center center;
       opacity: 0;
-      transition: opacity 1s linear;
+      transition: opacity 0.5s linear;
 
       @media (min-width: 1440px) {
         height: rem(59);
@@ -546,6 +662,10 @@
 
     &-active {
       color: var(--primary-500);
+
+      &:nth-of-type(2) {
+        color: #399df5;
+      }
 
       &::before,
       img {

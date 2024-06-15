@@ -40,12 +40,12 @@
   &__slide {
     position: relative;
     display: grid;
-    align-items: center;
+    align-items: flex-start;
     gap: rem(24);
     opacity: 0 !important;
 
     @media (min-width: 768px) {
-      grid-template-rows: max-content auto;
+      grid-template-rows: auto 1fr;
       grid-template-columns: 1.9fr 1fr;
     }
 
@@ -394,6 +394,7 @@
 
     .orange {
       font-weight: 700;
+      text-transform: uppercase;
     }
   }
 

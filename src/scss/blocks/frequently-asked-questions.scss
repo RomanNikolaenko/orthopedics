@@ -122,6 +122,7 @@
       grid-column: 3 / -1;
       @include property('padding-left', 170, 110, 600, 480);
       max-width: 100%;
+      right: rem(12);
     }
 
     @media (max-width: 479.98px) {
@@ -134,11 +135,11 @@
       padding: rem(40);
       z-index: 2;
       grid-column: 1/4;
-      @include adaptiveClamp('padding-right', 60, 90, 1200, 768);
+      @include property('padding-right', 200, 90, 1200, 768);
     }
 
     @media (min-width: 1200px) {
-      @include property('padding-right', 80, 70, 1920, 1200);
+      @include property('padding-right', 120, 70, 1920, 1200);
     }
   }
 

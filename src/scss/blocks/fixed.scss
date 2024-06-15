@@ -5,11 +5,7 @@
   z-index: 20;
   display: flex;
   flex-direction: column;
-  gap: rem(20);
-
-  @media (min-width: 1440px) {
-    gap: rem(30);
-  }
+  gap: rem(16);
 
   &__tooltip {
     position: relative;
@@ -64,11 +60,11 @@
         transition: all var(--bs-transition);
 
         @include interactive {
-          color: var(-gray);
+          color: var(-blue);
         }
 
         @include any-hover {
-          color: var(--blue);
+          color: #399df5;
         }
       }
     }

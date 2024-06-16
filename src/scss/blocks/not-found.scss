@@ -1,0 +1,203 @@
+.not-found {
+  display: grid;
+  align-items: center;
+  gap: rem(24);
+  margin: rem(40) 0;
+
+  @media (min-width: 768px) {
+    margin: rem(60) 0;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    margin: rem(100) 0;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: rem(920);
+    max-height: rem(400);
+    aspect-ratio: 1.25/1;
+    border-radius: rem(30);
+    overflow: hidden;
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      max-height: initial;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__column {
+    background-color: var(--bg);
+    box-shadow: none;
+    height: 100%;
+
+    &-wrap {
+      display: grid;
+      align-content: flex-start;
+      gap: rem(20);
+      padding: rem(20) rem(12);
+
+      @media (min-width: 1200px) {
+        padding: rem(30);
+      }
+
+      @media (min-width: 1440px) {
+        padding: rem(40);
+      }
+
+      @media (min-width: 1680px) {
+        padding: rem(60);
+      }
+
+      .button {
+        max-width: rem(400);
+        line-height: 1.2;
+        margin: 0 auto;
+        height: rem(56);
+
+        @media (min-width: 1200px) {
+          margin: initial;
+        }
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: rem(10);
+    font-weight: 500;
+    font-size: rem(45);
+    line-height: 1.01;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--primary-500);
+
+    @media (min-width: 1200px) {
+      justify-content: flex-start;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: rem(55);
+    }
+
+    @media (min-width: 1680px) {
+      font-size: rem(71);
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      font-weight: 600;
+      line-height: 1;
+      font-size: rem(150);
+      white-space: nowrap;
+
+      @media (min-width: 768px) {
+        font-size: rem(180);
+      }
+
+      @media (min-width: 1200px) {
+        font-size: rem(200);
+      }
+
+      @media (min-width: 1440px) {
+        font-size: rem(232);
+      }
+
+      @media (min-width: 1680px) {
+        font-size: rem(252);
+      }
+
+      @include pseudo-cell(before) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: rem(130);
+        aspect-ratio: 1/1.08;
+        background-image: url('../../images/404/helmet.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+
+        @media (min-width: 768px) {
+          width: rem(160);
+        }
+
+        @media (min-width: 1200px) {
+          width: rem(180);
+        }
+
+        @media (min-width: 1440px) {
+          width: rem(192);
+        }
+
+        @media (min-width: 1680px) {
+          width: rem(208);
+        }
+      }
+
+      @include pseudo-cell(after) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.5);
+        z-index: -1;
+        width: rem(600);
+        height: rem(600);
+        background-image: url('../../images/404/Ellipse.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: rem(24);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--text-title);
+
+    @media (min-width: 768px) {
+      font-size: rem(30);
+    }
+
+    @media (min-width: 1200px) {
+      text-align: left;
+      font-size: rem(36);
+    }
+
+    @media (min-width: 1640px) {
+      font-size: rem(48);
+    }
+  }
+
+  &__text {
+    font-family: var(--font-second);
+    font-size: rem(16);
+    line-height: 1.3;
+    color: var(--text-title);
+    text-wrap: balance;
+    text-align: center;
+    margin-bottom: rem(20);
+
+    @media (min-width: 1200px) {
+      text-align: left;
+      margin-bottom: rem(40);
+    }
+  }
+}

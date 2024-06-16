@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+  @@include('html/head.html', { 'title': '404' })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html')
+
+      <main class="page __container">
+        <div class="not-found">
+          <div class="not-found__img">
+            <img src="./images/404/image.jpg" width="916" height="602" alt>
+          </div>
+
+          <div class="card-border not-found__column">
+            <div class="card-border__wrap not-found__column-wrap">
+              <h1 class="not-found__title"><span>4 4</span> ой-ой</h1>
+              <p class="not-found__subtitle">Сторінка не знайдена</p>
+              <p class="not-found__text">
+                Вибачте, але ця сторінка, яку ви шукали, могла зазнати
+                невеликого технiчного збою. Не хвилюйтеся, ви можете перейти до
+                головноЇ
+              </p>
+
+              <a href="/" class="button button-white">Повернутися на
+                головну</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      @@include('html/footer.html')
+    </div>
+
+    @@include('html/popups.html')
+  </body>
+</html>

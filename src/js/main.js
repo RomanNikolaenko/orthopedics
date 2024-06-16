@@ -98,80 +98,86 @@ document.addEventListener('click', function (e) {
   }
 
   const whatHelmet = document.querySelector('.what-a-helmet-can-do');
-  const whatHelmetBtn = whatHelmet.querySelectorAll(
-    '.what-a-helmet-can-do__btn'
-  );
-  const whatHelmetPopup = whatHelmet.querySelectorAll(
-    '.what-a-helmet-can-do__popup'
-  );
 
-  if (whatHelmet && e.target.classList.contains('what-a-helmet-can-do__btn')) {
-    const dataAttr = e.target.getAttribute('data-popup-btn');
+  if (whatHelmet) {
+    const whatHelmetBtn = whatHelmet.querySelectorAll(
+      '.what-a-helmet-can-do__btn'
+    );
+    const whatHelmetPopup = whatHelmet.querySelectorAll(
+      '.what-a-helmet-can-do__popup'
+    );
 
-    if (!e.target.classList.contains('what-a-helmet-can-do__btn_active')) {
-      whatHelmetBtn.forEach((item) => {
-        item.classList.remove('what-a-helmet-can-do__btn_active');
+    if (e.target.classList.contains('what-a-helmet-can-do__btn')) {
+      const dataAttr = e.target.getAttribute('data-popup-btn');
+
+      if (!e.target.classList.contains('what-a-helmet-can-do__btn_active')) {
+        whatHelmetBtn.forEach((item) => {
+          item.classList.remove('what-a-helmet-can-do__btn_active');
+        });
+      }
+
+      e.target.classList.toggle('what-a-helmet-can-do__btn_active');
+
+      whatHelmetPopup.forEach((item) => {
+        item.classList.remove('popup-helmet_active');
+
+        if (
+          item.getAttribute('data-popup-wrap') == dataAttr &&
+          e.target.classList.contains('what-a-helmet-can-do__btn_active')
+        ) {
+          item.classList.toggle('popup-helmet_active');
+        }
       });
     }
 
-    e.target.classList.toggle('what-a-helmet-can-do__btn_active');
+    if (
+      !e.target.closest('.popup-helmet') &&
+      !e.target.closest('.what-a-helmet-can-do__btn')
+    ) {
+      whatHelmetBtn.forEach((item) => {
+        item.classList.remove('what-a-helmet-can-do__btn_active');
+      });
 
-    whatHelmetPopup.forEach((item) => {
-      item.classList.remove('popup-helmet_active');
+      whatHelmetPopup.forEach((item) => {
+        item.classList.remove('popup-helmet_active');
+      });
+    }
 
-      if (
-        item.getAttribute('data-popup-wrap') == dataAttr &&
-        e.target.classList.contains('what-a-helmet-can-do__btn_active')
-      ) {
-        item.classList.toggle('popup-helmet_active');
-      }
-    });
-  }
+    if (e.target.classList.contains('popup-helmet__close')) {
+      whatHelmetBtn.forEach((item) => {
+        item.classList.remove('what-a-helmet-can-do__btn_active');
+      });
 
-  if (
-    !e.target.closest('.popup-helmet') &&
-    !e.target.closest('.what-a-helmet-can-do__btn')
-  ) {
-    whatHelmetBtn.forEach((item) => {
-      item.classList.remove('what-a-helmet-can-do__btn_active');
-    });
-
-    whatHelmetPopup.forEach((item) => {
-      item.classList.remove('popup-helmet_active');
-    });
-  }
-
-  if (whatHelmet && e.target.classList.contains('popup-helmet__close')) {
-    whatHelmetBtn.forEach((item) => {
-      item.classList.remove('what-a-helmet-can-do__btn_active');
-    });
-
-    whatHelmetPopup.forEach((item) => {
-      item.classList.remove('popup-helmet_active');
-    });
+      whatHelmetPopup.forEach((item) => {
+        item.classList.remove('popup-helmet_active');
+      });
+    }
   }
 
   if (e.target.closest('.tooltip__btn')) {
     const parent = e.target.parentNode;
 
-    if(parent.getAttribute('data-collapse') == 'false') {
+    if (parent.getAttribute('data-collapse') == 'false') {
       const tooltips = document.querySelectorAll('[data-collapse]');
-    
-      tooltips.forEach(tooltip => {
+
+      tooltips.forEach((tooltip) => {
         tooltip.classList.remove('tooltip_open');
         tooltip.setAttribute('data-collapse', false);
-      })
+      });
     }
     parent.classList.toggle('tooltip_open');
-    parent.setAttribute('data-collapse', parent.classList.contains('tooltip_open') ? true : false);
+    parent.setAttribute(
+      'data-collapse',
+      parent.classList.contains('tooltip_open') ? true : false
+    );
   }
 
   if (!e.target.closest('.tooltip')) {
     const tooltips = document.querySelectorAll('.tooltip');
-    
-    tooltips.forEach(tooltip => {
+
+    tooltips.forEach((tooltip) => {
       tooltip.classList.remove('tooltip_open');
       tooltip.setAttribute('data-collapse', false);
-    })
+    });
   }
 });

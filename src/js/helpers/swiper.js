@@ -15,10 +15,10 @@ if(hero1) {
     spaceBetween: 30,
     speed: 1000,
     effect: "fade",
-    // autoplay: {
-    //   delay: 12000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 12000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".hero1__pagination",
       clickable: true,

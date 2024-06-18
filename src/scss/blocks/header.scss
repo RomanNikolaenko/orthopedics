@@ -9,12 +9,12 @@
     display: flex;
     align-items: center;
     background-color: rgba(248, 247, 244, 0.898);
-    min-height: rem(52);
     border: 1px solid #b4aea74d;
     box-shadow: 0px 4px 11px 0px #b4aea721;
     border-radius: 0 0 rem(20) rem(20);
     padding-block: rem(12);
     backdrop-filter: blur(18px);
+    min-height: rem(52);
 
     @media (min-width: 768px) {
       border-radius: 0 0 rem(30) rem(30);

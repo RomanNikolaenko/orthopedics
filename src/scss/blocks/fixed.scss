@@ -184,6 +184,13 @@
     @include any-hover {
       border-color: #399df5;
     }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
   }
 }
 
@@ -232,6 +239,7 @@
     border-radius: 50%;
     box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
     background-color: rgba(255, 255, 255, 0.8);
+    transition: all var(--bs-transition);
 
     @media (min-width: 768px) {
       width: rem(44);
@@ -313,6 +321,18 @@
       }
     }
   }
+
+  &__close {
+    @include interactive {
+      background-color: var(--primary-400);
+      color: #ffffff;
+    }
+
+    @include any-hover {
+      background-color: var(--primary-500);
+      color: #ffffff;
+    }
+  }
 }
 
 .piro-popup {
@@ -328,6 +348,18 @@
       &::before {
         color: #399df5;
       }
+    }
+  }
+
+  &__close {
+    @include interactive {
+      background-color: rgba(57, 157, 245, 0.8);
+      color: #ffffff;
+    }
+
+    @include any-hover {
+      background-color: #399df5;
+      color: #ffffff;
     }
   }
 

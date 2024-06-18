@@ -98,60 +98,18 @@ document.addEventListener('click', function (e) {
   }
 
   const whatHelmet = document.querySelector('.what-a-helmet-can-do');
-
   if (whatHelmet) {
-    const whatHelmetBtn = whatHelmet.querySelectorAll(
-      '.what-a-helmet-can-do__btn'
+    popups(
+      e,
+      whatHelmet,
+      'what-a-helmet-can-do__btn',
+      'what-a-helmet-can-do__popup'
     );
-    const whatHelmetPopup = whatHelmet.querySelectorAll(
-      '.what-a-helmet-can-do__popup'
-    );
+  }
 
-    if (e.target.classList.contains('what-a-helmet-can-do__btn')) {
-      const dataAttr = e.target.getAttribute('data-popup-btn');
-
-      if (!e.target.classList.contains('what-a-helmet-can-do__btn_active')) {
-        whatHelmetBtn.forEach((item) => {
-          item.classList.remove('what-a-helmet-can-do__btn_active');
-        });
-      }
-
-      e.target.classList.toggle('what-a-helmet-can-do__btn_active');
-
-      whatHelmetPopup.forEach((item) => {
-        item.classList.remove('popup-helmet_active');
-
-        if (
-          item.getAttribute('data-popup-wrap') == dataAttr &&
-          e.target.classList.contains('what-a-helmet-can-do__btn_active')
-        ) {
-          item.classList.toggle('popup-helmet_active');
-        }
-      });
-    }
-
-    if (
-      !e.target.closest('.popup-helmet') &&
-      !e.target.closest('.what-a-helmet-can-do__btn')
-    ) {
-      whatHelmetBtn.forEach((item) => {
-        item.classList.remove('what-a-helmet-can-do__btn_active');
-      });
-
-      whatHelmetPopup.forEach((item) => {
-        item.classList.remove('popup-helmet_active');
-      });
-    }
-
-    if (e.target.classList.contains('popup-helmet__close')) {
-      whatHelmetBtn.forEach((item) => {
-        item.classList.remove('what-a-helmet-can-do__btn_active');
-      });
-
-      whatHelmetPopup.forEach((item) => {
-        item.classList.remove('popup-helmet_active');
-      });
-    }
+  const mapPopups = document.querySelector('.map');
+  if (mapPopups) {
+    popups(e, mapPopups, 'bg', 'region-map');
   }
 
   if (e.target.closest('.tooltip__btn')) {
@@ -181,3 +139,51 @@ document.addEventListener('click', function (e) {
     });
   }
 });
+
+const popups = (e, parent, btn, popup) => {
+  const mapBtn = parent.querySelectorAll(`.${btn}`);
+  const mapPopup = parent.querySelectorAll(`.${popup}`);
+
+  if (e.target.classList.contains(`${btn}`)) {
+    const dataAttr = e.target.getAttribute('data-popup-btn');
+
+    if (!e.target.classList.contains(`${btn}_active`)) {
+      mapBtn.forEach((item) => {
+        item.classList.remove(`${btn}_active`);
+      });
+    }
+
+    e.target.classList.toggle(`${btn}_active`);
+
+    mapPopup.forEach((item) => {
+      item.classList.remove(`${popup}_active`);
+
+      if (
+        item.getAttribute('data-popup-wrap') == dataAttr &&
+        e.target.classList.contains(`${btn}_active`)
+      ) {
+        item.classList.toggle(`${popup}_active`);
+      }
+    });
+  }
+
+  if (!e.target.closest(`.${popup}`) && !e.target.closest(`.${btn}`)) {
+    mapBtn.forEach((item) => {
+      item.classList.remove(`${btn}_active`);
+    });
+
+    mapPopup.forEach((item) => {
+      item.classList.remove(`${popup}_active`);
+    });
+  }
+
+  if (e.target.classList.contains(`${popup}__close`)) {
+    mapBtn.forEach((item) => {
+      item.classList.remove(`${btn}_active`);
+    });
+
+    mapPopup.forEach((item) => {
+      item.classList.remove(`${popup}_active`);
+    });
+  }
+};

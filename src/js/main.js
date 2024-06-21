@@ -187,3 +187,25 @@ const popups = (e, parent, btn, popup) => {
     });
   }
 };
+
+
+function reportWindow() {
+  if(window.innerWidth >= 768) {
+    const btn = document.querySelector('[data-popup-btn="region-1"]');
+    const popup = document.querySelector('[data-popup-wrap="region-1"]');
+
+    if(btn && popup) {
+      btn.classList.add('bg_active');
+      popup.classList.add('region-map_active');
+    }
+  }
+
+  const helmetBtn = document.querySelector('[data-popup-btn="1"]');
+  const helmetPopup = document.querySelector('[data-popup-wrap="1"]');
+  if(helmetBtn && helmetPopup) {
+    helmetBtn.classList.add('what-a-helmet-can-do__btn_active');
+    helmetPopup.classList.add('what-a-helmet-can-do__popup_active');
+  }
+}
+
+reportWindow();

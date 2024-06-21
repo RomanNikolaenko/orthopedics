@@ -23,6 +23,14 @@
       gap: rem(30);
     }
 
+    &-init {
+      .swiper-slide {
+        &[data-swiper-slide-index='0'] {
+          order: -1;
+        }
+      }
+    }
+
     .swiper-slide {
       height: auto;
     }
@@ -102,7 +110,14 @@
   }
 
   &-pagination {
+    display: flex;
+    justify-content: center;
     padding: rem(4) 0;
+    overflow: hidden;
+
+    &.swiper-pagination-lock {
+      display: none !important;
+    }
   }
 
   &-button-next,
@@ -128,6 +143,10 @@
 
   &-button-next {
     transform: rotate(180deg);
+  }
+
+  .button-arrow {
+    font-size: rem(17);
   }
 }
 

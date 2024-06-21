@@ -30,7 +30,7 @@ if(hero1) {
 }
 
 
-new Swiper('.our-doctors__swiper', {
+const ourDoctorSwiper = new Swiper('.our-doctors__swiper', {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 30,
@@ -65,8 +65,45 @@ new Swiper('.our-doctors__swiper', {
       slidesPerView: 2.3,
     },
 
-    1640: {
+    1680: {
       slidesPerView: 3,
     },
   },
 });
+
+function reportWindowSize() {
+  const slider = document.querySelector(".our-doctors__swiper");
+
+  if(slider) {
+    const sliderSlides = slider.querySelectorAll(".swiper-slide");
+
+    if(window.innerWidth >= 320) {
+      if(sliderSlides.length <2) {
+        slider.classList.add('our-doctors__swiper-init')
+      } else {
+        slider.classList.remove('our-doctors__swiper-init')
+      }
+    }
+  
+    if(window.innerWidth >= 576) {
+      if(sliderSlides.length <3) {
+        slider.classList.add('our-doctors__swiper-init')
+      } else {
+        slider.classList.remove('our-doctors__swiper-init')
+      }
+    }
+  
+    if(window.innerWidth >= 1680) {
+      if(sliderSlides.length <4) {
+        slider.classList.add('our-doctors__swiper-init')
+      } else {
+        slider.classList.remove('our-doctors__swiper-init')
+      }
+    }
+  }
+  
+}
+
+reportWindowSize();
+
+window.onresize = reportWindowSize;

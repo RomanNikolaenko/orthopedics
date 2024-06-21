@@ -108,6 +108,21 @@
       mask-repeat: no-repeat;
     }
   }
+
+  &.button-arrow-down {
+    line-height: 1;
+
+    @include pseudo-cell(after, initial) {
+      flex: 0 0 auto;
+      width: rem(11);
+      height: rem(13);
+      background-color: currentColor;
+      mask-image: url('../../images/svg/arrow-down.svg');
+      mask-size: contain;
+      mask-position: center center;
+      mask-repeat: no-repeat;
+    }
+  }
 }
 
 .button-close {

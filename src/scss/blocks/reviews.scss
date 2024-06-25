@@ -1,0 +1,222 @@
+.reviews {
+  @media (min-width: 1200px) {
+    --padding: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    --padding: 120px;
+  }
+
+  &__header {
+    display: grid;
+    gap: rem(20);
+  }
+
+  &__title {
+    i {
+      text-align: right;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    gap: rem(20);
+
+    @media (min-width: 1200px) {
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    }
+  }
+
+  &__image {
+    border-radius: rem(30);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__desc {
+    display: grid;
+    align-content: flex-start;
+    gap: rem(10);
+
+    @media (min-width: 1200px) {
+      padding-bottom: calc(var(--padding) + 1rem);
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: rem(24);
+      color: var(--text-title);
+      line-height: 1.2;
+
+      @media (min-width: 1200px) {
+        font-size: rem(32);
+      }
+
+      @media (min-width: 1440px) {
+        font-size: rem(40);
+      }
+
+      @media (min-width: 1680px) {
+        font-size: rem(48);
+      }
+
+      * {
+        color: var(--primary-500);
+      }
+    }
+
+    &-text {
+      color: var(--text-dark);
+      text-align: justify;
+      font-family: var(--font-second);
+    }
+  }
+
+  &__swiper {
+    margin-top: rem(20);
+
+    @media (min-width: 1200px) {
+      margin-top: calc(var(--padding) * -1);
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .swiper-pagination-bullet {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 11px;
+      height: 11px;
+      overflow: initial;
+      margin: 0 rem(10) !important;
+      background-color: #e0e0e0;
+      border: 2px solid #e0e0e0;
+      opacity: 1;
+      transition: all var(--bs-transition) !important;
+
+      @include pseudo-cell(before) {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../images/svg/dot.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+        transition: opacity var(--bs-transition);
+      }
+
+      @include interactive {
+        background-color: var(--primary-300);
+        border-color: var(--primary-300);
+        color: #ffffff;
+      }
+
+      @include any-hover {
+        background-color: var(--primary-400);
+        border-color: var(--primary-400);
+        color: #ffffff;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      transform: none !important;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    align-items: flex-start;
+    gap: rem(20);
+    margin-top: rem(30);
+
+    @media (min-width: 768px) {
+      margin-top: rem(60);
+      gap: rem(40) rem(20);
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__banner {
+    font-size: rem(20);
+    text-transform: uppercase;
+    color: var(--text-dark);
+    max-width: rem(600);
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+      font-size: rem(24);
+      text-align: right;
+    }
+
+    @media (min-width: 1440px) {
+      grid-column: 3;
+    }
+
+    * {
+      color: var(--primary-500);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(16);
+
+    @media (min-width: 1440px) {
+      grid-column: 2;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding: rem(4) 0;
+    overflow: hidden;
+    transform: none !important;
+  }
+
+  &__button-next,
+  &__button-prev {
+    background-color: var(--text-light);
+    mask-image: url('../../images/svg/arrow-slider.svg');
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: rem(9) rem(14);
+    width: rem(24);
+    height: rem(25);
+    cursor: pointer;
+    transition: background-color var(--bs-transition);
+
+    @include interactive {
+      background-color: var(--primary-300);
+    }
+
+    @include any-hover {
+      background-color: var(--primary-400);
+    }
+  }
+
+  &__button-next {
+    transform: rotate(180deg);
+  }
+}

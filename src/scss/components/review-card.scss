@@ -1,0 +1,124 @@
+.review-card {
+  &__wrap {
+    display: grid;
+    grid-template-columns: rem(60) 1fr;
+    gap: rem(16);
+    padding: rem(20);
+    background-color: #ffffff;
+
+    @media (min-width: 1440px) {
+      grid-template-columns: rem(70) 1fr;
+      padding: rem(40);
+    }
+
+    @media (min-width: 1680px) {
+      grid-template-columns: rem(100) 1fr;
+      gap: rem(24);
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 50%;
+    border: 2px solid var(--primary-500);
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  &__desc {
+    display: grid;
+    gap: rem(12);
+
+    &-name {
+      font-size: rem(20);
+      line-height: 120%;
+      text-transform: uppercase;
+      color: var(--text-title);
+
+      @media (min-width: 768px) {
+        font-size: rem(24);
+      }
+
+      @media (min-width: 1440px) {
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: auto 1fr;
+      }
+
+      @media (min-width: 1680px) {
+        font-size: rem(28);
+      }
+    }
+
+    &-old {
+      font-family: var(--font-second);
+      color: var(--text-light);
+
+      @media (max-width: 480px) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  &__rating {
+    @media (min-width: 1440px) {
+      grid-row: 1/-1;
+      grid-column: 2;
+    }
+  }
+
+  &__review {
+    display: grid;
+    gap: rem(8);
+    grid-column: 1 / -1;
+    font-family: var(--font-second);
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(8);
+      font-size: rem(16);
+      text-transform: uppercase;
+      color: var(--text-light);
+
+      @media (min-width: 768px) {
+        font-size: rem(18);
+      }
+    }
+
+    &-text {
+      font-size: rem(16);
+      text-align: justify;
+      color: var(--text-dark);
+      max-height: rem(160);
+      overflow-y: overlay;
+      padding-right: rem(16);
+      margin-right: rem(-16);
+    }
+  }
+}
+
+.rating {
+  --rating: 3;
+  $column-number: 2;
+
+  display: flex;
+  gap: rem(2);
+  color: #e9e9e9;
+
+  &__svg {
+    width: rem(24);
+    height: rem(24);
+
+    &-active {
+      color: #ffba09;
+    }
+  }
+}

@@ -33,7 +33,7 @@ html {
   overflow: hidden overlay;
   scroll-behavior: smooth;
   transition: opacity 0.5s ease-in-out;
-  background-color: var(--surface-bg);
+  background-color: #fffbf7;
 
   &.loaded {
     opacity: 1;

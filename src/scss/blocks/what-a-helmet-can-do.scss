@@ -442,8 +442,9 @@
   &__close {
     display: none;
     box-shadow: 0 3px 4px 0 rgba(31, 33, 29, 0.11);
-    background: var(--surface-white);
+    background-color: #ffffff;
     border-radius: 50%;
+
     padding: rem(10);
     width: rem(44);
     height: rem(44);

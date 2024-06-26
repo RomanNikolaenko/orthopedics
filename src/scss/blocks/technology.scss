@@ -89,10 +89,15 @@
       border-radius: rem(25);
       box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19);
       margin: 0 auto;
+      grid-row: 1;
 
       @media (min-width: 768px) {
         grid-row: 1/-1;
       }
+    }
+
+    picture {
+      grid-row: 1;
     }
 
     &-img2 {

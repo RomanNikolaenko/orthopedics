@@ -668,6 +668,11 @@
       }
     }
 
+    span {
+      display: block;
+      white-space: nowrap;
+    }
+
     img {
       display: block;
       margin: 0 auto rem(4);

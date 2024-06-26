@@ -97,10 +97,19 @@
       font-size: rem(16);
       text-align: justify;
       color: var(--text-dark);
-      max-height: rem(160);
+      max-height: rem(120);
       overflow-y: overlay;
-      padding-right: rem(16);
-      margin-right: rem(-16);
+      padding-right: rem(8);
+      margin-right: rem(-8);
+
+      @media (min-width: 768px) {
+        max-height: rem(160);
+      }
+
+      @media (min-width: 1440px) {
+        padding-right: rem(16);
+        margin-right: rem(-16);
+      }
     }
   }
 }

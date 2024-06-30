@@ -1,0 +1,59 @@
+.breadcrumb {
+  font-family: var(--font-second);
+  font-size: rem(15);
+
+  @media (min-width: 768px) {
+    grid-column: 1/-1;
+    min-width: 56%;
+    max-width: max-content;
+  }
+
+  @media (min-width: 1680px) {
+    min-width: calc(56% - rem(140));
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(12) rem(20);
+    padding: rem(16);
+    background-color: #ffffff;
+    color: var(--text-title);
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      position: relative;
+
+      @include pseudo-cell(before) {
+        top: 50%;
+        left: calc(100% + rem(10));
+        transform: translate(-50%, -50%) rotate(180deg);
+        width: rem(6);
+        height: rem(12);
+        background-image: url('../../images/svg/arrow-slider.svg');
+        background-size: 100% 100%;
+        background-position: center center;
+        pointer-events: none;
+      }
+    }
+
+    &:nth-last-of-type(1) {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  }
+
+  &__link {
+    transition: color var(--bs-transition);
+
+    @include interactive {
+      color: var(--primary-300);
+    }
+
+    @include any-hover {
+      color: var(--primary-400);
+    }
+  }
+}
